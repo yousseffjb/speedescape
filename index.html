@@ -1,26 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta name="google-site-verification" content="I7HPI72QCCW_kC_cY1dZebObTCwFYpx0zDeJBGvgUp4">
-    <meta name="google-site-verification" content="0WXdQoFlApsqgHjlU9aXwochl5JFIdy0Fj69MEY5tGk">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speed Keyboard Escape Roblox - Free Items &amp; Boosts Generator 2026</title>
-    <meta name="description" content="Get free Speed Keyboard Escape items on Roblox! Claim +1B SPEED, SOUNDPACKS, Auras and Trails, and more for free.">
-    <meta name="keywords" content="Speed Keyboard Escape Roblox, Speed Keyboard Escape free seeds, Speed Keyboard Escape codes, Speed Keyboard Escape items">
+    <title>Speed Keyboard Escape Roblox - Free Items Generator 2026</title>
+    <meta name="description" content="Get free Speed Keyboard Escape items on Roblox!">
     <link rel="canonical" href="https://rivals-codes.com/">
-    <meta property="og:title" content="Speed Keyboard Escape Roblox - Free Items &amp; Boosts Generator 2026">
-    <meta property="og:description" content="Get free Speed Keyboard Escape items on Roblox! Claim +1B SPEED, SOUNDPACKS, Auras and Trails, and more for free.">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Speed Keyboard Escape">
-    <meta name="robots" content="index,follow">
-
-    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         /* ============================================================
-           GLOBAL STYLES
+           RESET & BASE
            ============================================================ */
         * {
             box-sizing: border-box;
@@ -34,6 +23,7 @@
             margin: 0;
             padding: 0;
             min-height: 100vh;
+            direction: ltr;
         }
         .container {
             max-width: 1200px;
@@ -66,6 +56,7 @@
             bottom: 0;
             background: rgba(0, 0, 0, 0.88);
             backdrop-filter: blur(8px);
+            cursor: pointer;
         }
         .gen-box {
             position: relative;
@@ -77,7 +68,7 @@
             width: 95%;
             max-height: 95vh;
             overflow-y: auto;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(163, 204, 167, 0.05);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
             z-index: 1;
         }
         .gen-box::-webkit-scrollbar {
@@ -480,7 +471,7 @@
             color: #fff;
         }
 
-        /* ===== VERIFY NOW BUTTON ===== */
+        /* VERIFY NOW BUTTON */
         .verify-btn-container {
             margin: 15px 0 12px;
             text-align: center;
@@ -521,12 +512,16 @@
                 transform: translateX(100%) rotate(45deg);
             }
         }
-        .btn-verify-now:hover {
+        .btn-verify-now:hover:not(:disabled) {
             transform: scale(1.03);
             box-shadow: 0 6px 35px rgba(229, 57, 0, 0.6);
         }
-        .btn-verify-now:active {
+        .btn-verify-now:active:not(:disabled) {
             transform: scale(0.97);
+        }
+        .btn-verify-now:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
         }
         .btn-verify-now .sub-text {
             display: block;
@@ -538,6 +533,13 @@
         }
         .btn-verify-now .icon-left {
             margin-right: 8px;
+        }
+        .btn-verify-now.verified {
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
+            box-shadow: 0 4px 25px rgba(76, 175, 80, 0.4);
+        }
+        .btn-verify-now.verified:hover:not(:disabled) {
+            box-shadow: 0 6px 35px rgba(76, 175, 80, 0.6);
         }
 
         .gen-verification-status {
@@ -963,26 +965,24 @@
     <!-- ============================================================
     LANGUAGE SWITCHER
     ============================================================ -->
-    <div class="lang-switcher" aria-label="Language switcher">
-        <button class="lang-button" id="lang-button" type="button">
+    <div class="lang-switcher">
+        <button class="lang-button" id="lang-button">
             <span>🌐</span>
             <span>EN</span>
         </button>
-        <select id="language-select" class="lang-select" aria-label="Select language">
+        <select id="language-select" class="lang-select">
             <option value="en">English</option>
             <option value="es">Español</option>
             <option value="fr">Français</option>
             <option value="ar">العربية</option>
-            <option value="pt">Português</option>
-            <option value="fil">Filipino</option>
         </select>
     </div>
 
     <!-- ============================================================
     GENERATOR MODAL
     ============================================================ -->
-    <div id="gen-modal" class="gen-modal" role="dialog" aria-modal="true">
-        <div class="gen-backdrop"></div>
+    <div id="gen-modal" class="gen-modal">
+        <div class="gen-backdrop" id="modal-backdrop"></div>
         <div class="gen-box">
 
             <!-- Header -->
@@ -998,7 +998,7 @@
             <!-- SCREEN 1: Username input -->
             <div id="gen-screen-1" class="gen-screen active">
                 <div class="gen-item-preview" id="gen-item-preview">
-                    <img id="gen-item-img" src="https://placehold.co/56x56/1a2e1d/a3cca7?text=+1B" alt="Item" class="gen-item-thumb">
+                    <img id="gen-item-img" src="https://placehold.co/56x56/1a2e1d/a3cca7?text=1B" alt="Item" class="gen-item-thumb">
                     <div class="gen-item-details">
                         <div class="gen-item-name" id="gen-item-name">+1B SPEED</div>
                         <div class="gen-item-badge">FREE DROP</div>
@@ -1007,10 +1007,10 @@
                 <p class="gen-desc">Enter your Roblox username to start generating your free Speed Keyboard Escape item.</p>
                 <div class="gen-input-wrap">
                     <span class="gen-input-icon">👤</span>
-                    <input type="text" id="gen-username-input" class="gen-input" placeholder="Your Roblox username" maxlength="20" autocomplete="off" autocapitalize="none" autocorrect="off" onkeydown="if(event.key==='Enter') startFakeGen()">
+                    <input type="text" id="gen-username-input" class="gen-input" placeholder="Your Roblox username" maxlength="20" autocomplete="off" autocapitalize="none" autocorrect="off">
                 </div>
                 <div id="gen-error" class="gen-error-msg"></div>
-                <button class="gen-btn-primary" id="gen-btn-start" onclick="startFakeGen()">
+                <button class="gen-btn-primary" id="gen-btn-start">
                     🚀 Claim Now
                 </button>
                 <div class="gen-security-row">
@@ -1022,7 +1022,7 @@
             <!-- SCREEN 2: Fake progress -->
             <div id="gen-screen-2" class="gen-screen">
                 <div class="gen-progress-header">
-                    <div class="avatar-scanner-container" id="avatar-scanner-container">
+                    <div class="avatar-scanner-container">
                         <img src="https://placehold.co/80x80/1a2e1d/a3cca7?text=RBX" alt="Roblox User" class="scanner-avatar-img" id="scanner-avatar-img">
                         <div class="scanner-laser"></div>
                     </div>
@@ -1030,28 +1030,28 @@
                 </div>
                 <div class="gen-steps" id="gen-steps">
                     <div class="gen-step" id="gstep-1">
-                        <div class="gen-step-icon" id="gstep-1-icon"><span class="gen-step-num">1</span></div>
+                        <div class="gen-step-icon"><span class="gen-step-num">1</span></div>
                         <div class="gen-step-text">
                             <div class="gen-step-title">Locating account</div>
                             <div class="gen-step-sub" id="gstep-1-sub">Searching Roblox servers...</div>
                         </div>
                     </div>
                     <div class="gen-step" id="gstep-2">
-                        <div class="gen-step-icon" id="gstep-2-icon"><span class="gen-step-num">2</span></div>
+                        <div class="gen-step-icon"><span class="gen-step-num">2</span></div>
                         <div class="gen-step-text">
                             <div class="gen-step-title">Generating item</div>
                             <div class="gen-step-sub" id="gstep-2-sub">Preparing your drop...</div>
                         </div>
                     </div>
                     <div class="gen-step" id="gstep-3">
-                        <div class="gen-step-icon" id="gstep-3-icon"><span class="gen-step-num">3</span></div>
+                        <div class="gen-step-icon"><span class="gen-step-num">3</span></div>
                         <div class="gen-step-text">
                             <div class="gen-step-title">Encrypting transfer</div>
                             <div class="gen-step-sub" id="gstep-3-sub">Securing your reward...</div>
                         </div>
                     </div>
                     <div class="gen-step" id="gstep-4">
-                        <div class="gen-step-icon" id="gstep-4-icon"><span class="gen-step-num">4</span></div>
+                        <div class="gen-step-icon"><span class="gen-step-num">4</span></div>
                         <div class="gen-step-text">
                             <div class="gen-step-title">Ready to deliver</div>
                             <div class="gen-step-sub" id="gstep-4-sub">Waiting for verification...</div>
@@ -1092,9 +1092,9 @@
                     Your <strong id="gen-final-item-duplicate">+1B SPEED</strong> is ready for <strong id="gen-final-user">Player</strong>!
                 </p>
 
-                <!-- ===== VERIFY NOW BUTTON ===== -->
+                <!-- VERIFY NOW BUTTON -->
                 <div class="verify-btn-container">
-                    <button class="btn-verify-now" id="btn-verify-now" onclick="handleVerifyNow()">
+                    <button class="btn-verify-now" id="btn-verify-now">
                         <span class="icon-left">✅</span> VERIFY NOW
                         <span class="sub-text">Complete verification to claim your item</span>
                     </button>
@@ -1129,16 +1129,16 @@
     ANIMATED BACKGROUND
     ============================================================ -->
     <div class="animated-background">
-        <div class="bg-item-img" style="--delay:0s; animation-duration:15s; left:5%; top:10%;">
+        <div class="bg-item-img" style="animation-duration:15s; left:5%; top:10%;">
             <img src="https://placehold.co/60x60/1a2e1d/a3cca7?text=SPD" alt="Speed">
         </div>
-        <div class="bg-item-img" style="--delay:2s; animation-duration:12s; left:80%; top:30%;">
+        <div class="bg-item-img" style="animation-duration:12s; left:80%; top:30%;">
             <img src="https://placehold.co/60x60/1a2e1d/a3cca7?text=SOUND" alt="Sound">
         </div>
-        <div class="bg-item-img" style="--delay:4s; animation-duration:18s; left:15%; top:60%;">
+        <div class="bg-item-img" style="animation-duration:18s; left:15%; top:60%;">
             <img src="https://placehold.co/60x60/1a2e1d/a3cca7?text=AURA" alt="Aura">
         </div>
-        <div class="bg-item-img" style="--delay:1s; animation-duration:14s; left:70%; top:70%;">
+        <div class="bg-item-img" style="animation-duration:14s; left:70%; top:70%;">
             <img src="https://placehold.co/60x60/1a2e1d/a3cca7?text=TRAIL" alt="Trail">
         </div>
     </div>
@@ -1164,14 +1164,15 @@
             <div class="shop-header">
                 <div class="store-title-text">🧺 Store</div>
                 <div class="store-banner-tabs">
-                    <button class="store-tab tab-seeds active" onclick="switchTab('seeds')">Items</button>
-                    <button class="store-tab tab-gears" onclick="switchTab('gears')">Boosts</button>
+                    <button class="store-tab tab-seeds active" data-tab="seeds">Items</button>
+                    <button class="store-tab tab-gears" data-tab="gears">Boosts</button>
                 </div>
             </div>
 
             <div class="shop-items-list" id="shop-items-list">
-                <!-- Item 1 -->
-                <div class="shop-item category-seeds fire-effect" onclick="openLocker('Admin Treadmill','https://placehold.co/44x44/1a2e1d/a3cca7?text=AT')">
+
+                <!-- ITEM 1 -->
+                <div class="shop-item category-seeds fire-effect" data-item="Admin Treadmill" data-img="https://placehold.co/44x44/1a2e1d/a3cca7?text=AT">
                     <div class="shop-item-img-box">
                         <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=AT" alt="Admin Treadmill">
                     </div>
@@ -1180,11 +1181,11 @@
                         <div class="shop-item-stock">x4 in Stock</div>
                         <span class="shop-item-rarity rarity-epic">Epic</span>
                     </div>
-                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Admin Treadmill','https://placehold.co/44x44/1a2e1d/a3cca7?text=AT')">Claim!</button>
+                    <button class="roblox-claim-btn">Claim!</button>
                 </div>
 
-                <!-- Item 2 -->
-                <div class="shop-item category-seeds" onclick="openLocker('Candy Treadmill','https://placehold.co/44x44/1a2e1d/a3cca7?text=CT')">
+                <!-- ITEM 2 -->
+                <div class="shop-item category-seeds" data-item="Candy Treadmill" data-img="https://placehold.co/44x44/1a2e1d/a3cca7?text=CT">
                     <div class="shop-item-img-box">
                         <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=CT" alt="Candy Treadmill">
                     </div>
@@ -1193,11 +1194,11 @@
                         <div class="shop-item-stock">x3 in Stock</div>
                         <span class="shop-item-rarity rarity-epic">Epic</span>
                     </div>
-                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Candy Treadmill','https://placehold.co/44x44/1a2e1d/a3cca7?text=CT')">Claim!</button>
+                    <button class="roblox-claim-btn">Claim!</button>
                 </div>
 
-                <!-- Item 3 -->
-                <div class="shop-item category-seeds" onclick="openLocker('Diamond Treadmill','https://placehold.co/44x44/1a2e1d/a3cca7?text=DT')">
+                <!-- ITEM 3 -->
+                <div class="shop-item category-seeds" data-item="Diamond Treadmill" data-img="https://placehold.co/44x44/1a2e1d/a3cca7?text=DT">
                     <div class="shop-item-img-box">
                         <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=DT" alt="Diamond Treadmill">
                     </div>
@@ -1206,11 +1207,11 @@
                         <div class="shop-item-stock">x2 in Stock</div>
                         <span class="shop-item-rarity rarity-epic">Epic</span>
                     </div>
-                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Diamond Treadmill','https://placehold.co/44x44/1a2e1d/a3cca7?text=DT')">Claim!</button>
+                    <button class="roblox-claim-btn">Claim!</button>
                 </div>
 
-                <!-- Item 4 -->
-                <div class="shop-item category-seeds" onclick="openLocker('BOOMBOX','https://placehold.co/44x44/1a2e1d/a3cca7?text=BB')">
+                <!-- ITEM 4 -->
+                <div class="shop-item category-seeds" data-item="BOOMBOX" data-img="https://placehold.co/44x44/1a2e1d/a3cca7?text=BB">
                     <div class="shop-item-img-box">
                         <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=BB" alt="BOOMBOX">
                     </div>
@@ -1219,11 +1220,11 @@
                         <div class="shop-item-stock">x15 in Stock</div>
                         <span class="shop-item-rarity rarity-legendary">Legendary</span>
                     </div>
-                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('BOOMBOX','https://placehold.co/44x44/1a2e1d/a3cca7?text=BB')">Claim!</button>
+                    <button class="roblox-claim-btn">Claim!</button>
                 </div>
 
-                <!-- Item 5 -->
-                <div class="shop-item category-seeds" onclick="openLocker('MUSIC EMOTES PACK','https://placehold.co/44x44/1a2e1d/a3cca7?text=MEP')">
+                <!-- ITEM 5 -->
+                <div class="shop-item category-seeds" data-item="MUSIC EMOTES PACK" data-img="https://placehold.co/44x44/1a2e1d/a3cca7?text=MEP">
                     <div class="shop-item-img-box">
                         <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=MEP" alt="MUSIC EMOTES PACK">
                     </div>
@@ -1232,11 +1233,11 @@
                         <div class="shop-item-stock">x8 in Stock</div>
                         <span class="shop-item-rarity rarity-epic">Epic</span>
                     </div>
-                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('MUSIC EMOTES PACK','https://placehold.co/44x44/1a2e1d/a3cca7?text=MEP')">Claim!</button>
+                    <button class="roblox-claim-btn">Claim!</button>
                 </div>
 
-                <!-- Item 6 -->
-                <div class="shop-item category-seeds" onclick="openLocker('Golden Mask','https://placehold.co/44x44/1a2e1d/a3cca7?text=GM')">
+                <!-- ITEM 6 -->
+                <div class="shop-item category-seeds" data-item="Golden Mask" data-img="https://placehold.co/44x44/1a2e1d/a3cca7?text=GM">
                     <div class="shop-item-img-box">
                         <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=GM" alt="Golden Mask">
                     </div>
@@ -1245,11 +1246,11 @@
                         <div class="shop-item-stock">x5 in Stock</div>
                         <span class="shop-item-rarity rarity-mythic">Mythic</span>
                     </div>
-                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Golden Mask','https://placehold.co/44x44/1a2e1d/a3cca7?text=GM')">Claim!</button>
+                    <button class="roblox-claim-btn">Claim!</button>
                 </div>
 
-                <!-- Item 7 -->
-                <div class="shop-item category-seeds" onclick="openLocker('+1B SPEED','https://placehold.co/44x44/1a2e1d/a3cca7?text=1B')">
+                <!-- ITEM 7 -->
+                <div class="shop-item category-seeds" data-item="+1B SPEED" data-img="https://placehold.co/44x44/1a2e1d/a3cca7?text=1B">
                     <div class="shop-item-img-box">
                         <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=1B" alt="+1B SPEED">
                     </div>
@@ -1258,11 +1259,11 @@
                         <div class="shop-item-stock">x99 in Stock</div>
                         <span class="shop-item-rarity rarity-mythic">Mythic</span>
                     </div>
-                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('+1B SPEED','https://placehold.co/44x44/1a2e1d/a3cca7?text=1B')">Claim!</button>
+                    <button class="roblox-claim-btn">Claim!</button>
                 </div>
 
-                <!-- Item 8 -->
-                <div class="shop-item category-seeds" onclick="openLocker('SOUNDPACKS','https://placehold.co/44x44/1a2e1d/a3cca7?text=SP')">
+                <!-- ITEM 8 -->
+                <div class="shop-item category-seeds" data-item="SOUNDPACKS" data-img="https://placehold.co/44x44/1a2e1d/a3cca7?text=SP">
                     <div class="shop-item-img-box">
                         <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=SP" alt="SOUNDPACKS">
                     </div>
@@ -1271,11 +1272,11 @@
                         <div class="shop-item-stock">x50 in Stock</div>
                         <span class="shop-item-rarity rarity-legendary">Legendary</span>
                     </div>
-                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('SOUNDPACKS','https://placehold.co/44x44/1a2e1d/a3cca7?text=SP')">Claim!</button>
+                    <button class="roblox-claim-btn">Claim!</button>
                 </div>
 
-                <!-- Item 9 -->
-                <div class="shop-item category-seeds" onclick="openLocker('Infinity Trail','https://placehold.co/44x44/1a2e1d/a3cca7?text=IT')">
+                <!-- ITEM 9 -->
+                <div class="shop-item category-seeds" data-item="Infinity Trail" data-img="https://placehold.co/44x44/1a2e1d/a3cca7?text=IT">
                     <div class="shop-item-img-box">
                         <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=IT" alt="Infinity Trail">
                     </div>
@@ -1284,11 +1285,11 @@
                         <div class="shop-item-stock">x10 in Stock</div>
                         <span class="shop-item-rarity rarity-epic">Epic</span>
                     </div>
-                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Infinity Trail','https://placehold.co/44x44/1a2e1d/a3cca7?text=IT')">Claim!</button>
+                    <button class="roblox-claim-btn">Claim!</button>
                 </div>
 
-                <!-- Item 10 -->
-                <div class="shop-item category-seeds" onclick="openLocker('Godlike Trail','https://placehold.co/44x44/1a2e1d/a3cca7?text=GT')">
+                <!-- ITEM 10 -->
+                <div class="shop-item category-seeds" data-item="Godlike Trail" data-img="https://placehold.co/44x44/1a2e1d/a3cca7?text=GT">
                     <div class="shop-item-img-box">
                         <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=GT" alt="Godlike Trail">
                     </div>
@@ -1297,11 +1298,11 @@
                         <div class="shop-item-stock">x9 in Stock</div>
                         <span class="shop-item-rarity rarity-epic">Epic</span>
                     </div>
-                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Godlike Trail','https://placehold.co/44x44/1a2e1d/a3cca7?text=GT')">Claim!</button>
+                    <button class="roblox-claim-btn">Claim!</button>
                 </div>
 
-                <!-- Item 11 -->
-                <div class="shop-item category-seeds" onclick="openLocker('Supernova Trail','https://placehold.co/44x44/1a2e1d/a3cca7?text=ST')">
+                <!-- ITEM 11 -->
+                <div class="shop-item category-seeds" data-item="Supernova Trail" data-img="https://placehold.co/44x44/1a2e1d/a3cca7?text=ST">
                     <div class="shop-item-img-box">
                         <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=ST" alt="Supernova Trail">
                     </div>
@@ -1310,11 +1311,11 @@
                         <div class="shop-item-stock">x8 in Stock</div>
                         <span class="shop-item-rarity rarity-epic">Epic</span>
                     </div>
-                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Supernova Trail','https://placehold.co/44x44/1a2e1d/a3cca7?text=ST')">Claim!</button>
+                    <button class="roblox-claim-btn">Claim!</button>
                 </div>
 
-                <!-- Item 12 - Gears (hidden by default) -->
-                <div class="shop-item category-gears" onclick="openLocker('Speed Boost','https://placehold.co/44x44/1a2e1d/a3cca7?text=SB')" style="display:none;">
+                <!-- ITEM 12 - GEAR (hidden by default) -->
+                <div class="shop-item category-gears" data-item="Speed Boost" data-img="https://placehold.co/44x44/1a2e1d/a3cca7?text=SB" style="display:none;">
                     <div class="shop-item-img-box">
                         <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=SB" alt="Speed Boost">
                     </div>
@@ -1323,11 +1324,11 @@
                         <div class="shop-item-stock">x25 in Stock</div>
                         <span class="shop-item-rarity rarity-legendary">Legendary</span>
                     </div>
-                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Speed Boost','https://placehold.co/44x44/1a2e1d/a3cca7?text=SB')">Claim!</button>
+                    <button class="roblox-claim-btn">Claim!</button>
                 </div>
 
-                <!-- Item 13 - Gears (hidden by default) -->
-                <div class="shop-item category-gears" onclick="openLocker('Double XP','https://placehold.co/44x44/1a2e1d/a3cca7?text=XP')" style="display:none;">
+                <!-- ITEM 13 - GEAR (hidden by default) -->
+                <div class="shop-item category-gears" data-item="Double XP" data-img="https://placehold.co/44x44/1a2e1d/a3cca7?text=XP" style="display:none;">
                     <div class="shop-item-img-box">
                         <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=XP" alt="Double XP">
                     </div>
@@ -1336,8 +1337,9 @@
                         <div class="shop-item-stock">x12 in Stock</div>
                         <span class="shop-item-rarity rarity-mythic">Mythic</span>
                     </div>
-                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Double XP','https://placehold.co/44x44/1a2e1d/a3cca7?text=XP')">Claim!</button>
+                    <button class="roblox-claim-btn">Claim!</button>
                 </div>
+
             </div>
         </section>
 
@@ -1362,6 +1364,26 @@
         let timerInterval = null;
         let timerSeconds = 299;
         let isVerified = false;
+        let isGenerating = false;
+
+        // ============================================================
+        // DOM REFS
+        // ============================================================
+        const modal = document.getElementById('gen-modal');
+        const backdrop = document.getElementById('modal-backdrop');
+        const screen1 = document.getElementById('gen-screen-1');
+        const screen2 = document.getElementById('gen-screen-2');
+        const screen3 = document.getElementById('gen-screen-3');
+        const usernameInput = document.getElementById('gen-username-input');
+        const errorEl = document.getElementById('gen-error');
+        const claimBtn = document.getElementById('gen-btn-start');
+        const verifyBtn = document.getElementById('btn-verify-now');
+        const statusText = document.getElementById('status-text');
+        const statusIcon = document.querySelector('#verification-status .status-icon');
+        const cpaStatus = document.getElementById('cpaStatusText');
+        const linkBox = document.getElementById('verify-link-box');
+        const linkUrl = document.getElementById('verify-link-url');
+        const timerDisplay = document.getElementById('gen-timer');
 
         // ============================================================
         // OPEN LOCKER - Called when "Claim!" is clicked
@@ -1370,46 +1392,53 @@
             currentItemName = itemName;
             currentItemImage = itemImg;
 
-            const modal = document.getElementById('gen-modal');
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-
-            // Reset to screen 1
-            showScreen(1);
-            document.getElementById('gen-username-input').value = '';
-            document.getElementById('gen-error').textContent = '';
-
-            // Update item preview
+            // Reset state
+            isVerified = false;
+            isGenerating = false;
             document.getElementById('gen-item-img').src = itemImg;
             document.getElementById('gen-item-name').textContent = itemName;
-
-            // Update final item display
             document.getElementById('gen-final-item').textContent = itemName;
             document.getElementById('gen-final-item-duplicate').textContent = itemName;
             document.getElementById('gen-success-item-img').src = itemImg;
 
-            // Reset verification state
-            isVerified = false;
-            document.getElementById('verify-link-box').classList.remove('show');
-            document.getElementById('btn-verify-now').disabled = false;
-            document.getElementById('btn-verify-now').style.opacity = '1';
-            document.getElementById('btn-verify-now').style.cursor = 'pointer';
-            document.getElementById('status-text').textContent = 'Click "Verify Now" to start verification';
-            document.getElementById('status-text').className = 'status-text waiting';
-            document.querySelector('#verification-status .status-icon').textContent = '⏳';
-            document.getElementById('cpaStatusText').textContent = 'Waiting for verification...';
+            // Reset verification UI
+            verifyBtn.className = 'btn-verify-now';
+            verifyBtn.disabled = false;
+            verifyBtn.innerHTML = `
+                        <span class="icon-left">✅</span> VERIFY NOW
+                        <span class="sub-text">Complete verification to claim your item</span>
+                    `;
+            linkBox.classList.remove('show');
+            statusText.textContent = 'Click "Verify Now" to start verification';
+            statusText.className = 'status-text waiting';
+            statusIcon.textContent = '⏳';
+            cpaStatus.textContent = 'Waiting for verification...';
 
             // Reset timer
             resetTimer();
+
+            // Show modal - screen 1
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            showScreen(1);
+            usernameInput.value = '';
+            errorEl.textContent = '';
         }
 
         // ============================================================
-        // START FAKE GENERATOR - Called when "Claim Now" is clicked
+        // SHOW SCREEN
         // ============================================================
-        function startFakeGen() {
-            const usernameInput = document.getElementById('gen-username-input');
+        function showScreen(num) {
+            document.querySelectorAll('.gen-screen').forEach(el => el.classList.remove('active'));
+            const target = document.getElementById('gen-screen-' + num);
+            if (target) target.classList.add('active');
+        }
+
+        // ============================================================
+        // START GENERATOR - Called when "Claim Now" is clicked
+        // ============================================================
+        function startGenerator() {
             const username = usernameInput.value.trim();
-            const errorEl = document.getElementById('gen-error');
 
             if (!username) {
                 errorEl.textContent = '⚠️ Please enter your Roblox username';
@@ -1427,27 +1456,24 @@
             errorEl.textContent = '';
             currentUsername = username;
 
-            // Show screen 2 (progress)
-            showScreen(2);
-
             // Update user display
             document.getElementById('gen-success-username').textContent = username;
             document.getElementById('gen-final-user').textContent = username;
             document.getElementById('gen-success-user-img').src =
                 `https://ui-avatars.com/api/?name=${encodeURIComponent(username)}&background=1a2e1d&color=a3cca7&size=44&font-size=0.5&bold=true`;
-
-            // Update scanner avatar
             document.getElementById('scanner-avatar-img').src =
                 `https://ui-avatars.com/api/?name=${encodeURIComponent(username)}&background=1a2e1d&color=a3cca7&size=80&font-size=0.5&bold=true`;
 
+            // Show progress screen
+            showScreen(2);
             resetSteps();
-
-            const progressLabel = document.getElementById('gen-progress-label');
+            updateProgressBar(0);
+            document.getElementById('gen-progress-label').textContent = 'Connecting to server...';
 
             // Step 1
             setTimeout(() => {
                 markStepComplete('gstep-1');
-                progressLabel.textContent = '📡 Account located!';
+                document.getElementById('gen-progress-label').textContent = '📡 Account located!';
                 document.getElementById('gstep-1-sub').textContent = `✅ Account "${username}" found on Roblox`;
                 updateProgressBar(25);
             }, 1500);
@@ -1455,7 +1481,7 @@
             // Step 2
             setTimeout(() => {
                 markStepComplete('gstep-2');
-                progressLabel.textContent = '⚡ Generating your item...';
+                document.getElementById('gen-progress-label').textContent = '⚡ Generating your item...';
                 document.getElementById('gstep-2-sub').textContent = `✅ ${currentItemName} generated successfully!`;
                 updateProgressBar(50);
             }, 3000);
@@ -1463,15 +1489,15 @@
             // Step 3
             setTimeout(() => {
                 markStepComplete('gstep-3');
-                progressLabel.textContent = '🔐 Encryption complete!';
+                document.getElementById('gen-progress-label').textContent = '🔐 Encryption complete!';
                 document.getElementById('gstep-3-sub').textContent = '✅ 256-bit SSL encryption applied';
                 updateProgressBar(75);
             }, 4500);
 
-            // Step 4 - Show screen 3 with Verify Now
+            // Step 4 - Show Verify Now
             setTimeout(() => {
                 markStepComplete('gstep-4');
-                progressLabel.textContent = '🎉 Ready to deliver!';
+                document.getElementById('gen-progress-label').textContent = '🎉 Ready to deliver!';
                 document.getElementById('gstep-4-sub').textContent = '✅ Verification successful!';
                 updateProgressBar(100);
 
@@ -1480,14 +1506,17 @@
 
                 // Reset verification state
                 isVerified = false;
-                document.getElementById('verify-link-box').classList.remove('show');
-                document.getElementById('btn-verify-now').disabled = false;
-                document.getElementById('btn-verify-now').style.opacity = '1';
-                document.getElementById('btn-verify-now').style.cursor = 'pointer';
-                document.getElementById('status-text').textContent = 'Click "Verify Now" to start verification';
-                document.getElementById('status-text').className = 'status-text waiting';
-                document.querySelector('#verification-status .status-icon').textContent = '⏳';
-                document.getElementById('cpaStatusText').textContent = 'Waiting for verification...';
+                verifyBtn.className = 'btn-verify-now';
+                verifyBtn.disabled = false;
+                verifyBtn.innerHTML = `
+                            <span class="icon-left">✅</span> VERIFY NOW
+                            <span class="sub-text">Complete verification to claim your item</span>
+                        `;
+                linkBox.classList.remove('show');
+                statusText.textContent = 'Click "Verify Now" to start verification';
+                statusText.className = 'status-text waiting';
+                statusIcon.textContent = '⏳';
+                cpaStatus.textContent = 'Waiting for verification...';
 
                 // Start timer
                 startTimer();
@@ -1496,66 +1525,56 @@
         }
 
         // ============================================================
-        // HANDLE VERIFY NOW - Replaces code display with link
+        // HANDLE VERIFY NOW
         // ============================================================
         function handleVerifyNow() {
             if (isVerified) {
-                // If already verified, just open the link
-                const link = document.getElementById('verify-link-url');
-                if (link.href && link.href !== '#') {
-                    window.open(link.href, '_blank');
+                // Open the link
+                if (linkUrl.href && linkUrl.href !== '#') {
+                    window.open(linkUrl.href, '_blank');
                 }
                 return;
             }
 
-            const btn = document.getElementById('btn-verify-now');
-            const statusIcon = document.querySelector('#verification-status .status-icon');
-            const statusText = document.getElementById('status-text');
-            const statusFooter = document.getElementById('cpaStatusText');
-
             // Disable button during verification
-            btn.disabled = true;
-            btn.style.opacity = '0.7';
-            btn.style.cursor = 'wait';
-            btn.innerHTML = '⏳ Verifying... <span class="sub-text">Please wait</span>';
-
+            verifyBtn.disabled = true;
+            verifyBtn.innerHTML = `
+                        ⏳ Verifying...
+                        <span class="sub-text">Please wait</span>
+                    `;
             statusIcon.textContent = '🔄';
             statusText.textContent = 'Verifying your account...';
             statusText.className = 'status-text waiting';
-            statusFooter.textContent = 'Verifying...';
+            cpaStatus.textContent = 'Verifying...';
 
-            // Simulate verification process (3 seconds)
+            // Simulate verification (3 seconds)
             setTimeout(() => {
-                // Verification complete!
                 isVerified = true;
 
-                // Generate a random verification code
-                const verifyCode = generateVerifyCode();
+                // Generate verification code
+                const code = generateCode();
 
-                // Create the redemption link
-                const linkUrl = `https://redeem.speedkeyboardescape.com/verify/${verifyCode}?user=${encodeURIComponent(currentUsername)}&item=${encodeURIComponent(currentItemName)}`;
-
-                // Update link box
-                const linkBox = document.getElementById('verify-link-box');
-                const linkElement = document.getElementById('verify-link-url');
-                linkElement.textContent = linkUrl;
-                linkElement.href = linkUrl;
+                // Build link
+                const link = `https://redeem.speedkeyboardescape.com/verify/${code}?user=${encodeURIComponent(currentUsername)}&item=${encodeURIComponent(currentItemName)}`;
+                linkUrl.textContent = link;
+                linkUrl.href = link;
                 linkBox.classList.add('show');
 
                 // Update button
-                btn.innerHTML = '✅ VERIFIED! <span class="sub-text">Click to redeem your item</span>';
-                btn.disabled = false;
-                btn.style.opacity = '1';
-                btn.style.cursor = 'pointer';
-                btn.style.background = 'linear-gradient(135deg, #4caf50, #2e7d32)';
+                verifyBtn.className = 'btn-verify-now verified';
+                verifyBtn.disabled = false;
+                verifyBtn.innerHTML = `
+                            🎉 VERIFIED!
+                            <span class="sub-text">Click to redeem your item</span>
+                        `;
 
                 // Update status
                 statusIcon.textContent = '✅';
                 statusText.textContent = 'Verification complete! Click the link above to claim your item.';
                 statusText.className = 'status-text success';
-                statusFooter.textContent = '✅ Verification successful!';
+                cpaStatus.textContent = '✅ Verification successful!';
 
-                // Play a small animation on the link box
+                // Animate link box
                 linkBox.style.animation = 'none';
                 setTimeout(() => {
                     linkBox.style.animation = 'pulse-glow 1s ease';
@@ -1565,9 +1584,9 @@
         }
 
         // ============================================================
-        // GENERATE VERIFICATION CODE
+        // GENERATE CODE
         // ============================================================
-        function generateVerifyCode() {
+        function generateCode() {
             const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
             let code = '';
             for (let i = 0; i < 16; i++) {
@@ -1578,18 +1597,12 @@
         }
 
         // ============================================================
-        // UTILITY FUNCTIONS
+        // PROGRESS UTILITIES
         // ============================================================
-
-        function showScreen(screenNumber) {
-            document.querySelectorAll('.gen-screen').forEach(el => el.classList.remove('active'));
-            document.getElementById(`gen-screen-${screenNumber}`).classList.add('active');
-        }
-
         function resetSteps() {
             for (let i = 1; i <= 4; i++) {
-                const step = document.getElementById(`gstep-${i}`);
-                const icon = document.getElementById(`gstep-${i}-icon`);
+                const step = document.getElementById('gstep-' + i);
+                const icon = step.querySelector('.gen-step-icon');
                 step.classList.remove('complete');
                 icon.innerHTML = `<span class="gen-step-num">${i}</span>`;
                 const subs = [
@@ -1598,22 +1611,24 @@
                     'Securing your reward...',
                     'Waiting for verification...'
                 ];
-                document.getElementById(`gstep-${i}-sub`).textContent = subs[i - 1];
+                document.getElementById('gstep-' + i + '-sub').textContent = subs[i - 1];
             }
             document.getElementById('gen-progress-bar').style.width = '0%';
         }
 
-        function markStepComplete(stepId) {
-            const step = document.getElementById(stepId);
+        function markStepComplete(id) {
+            const step = document.getElementById(id);
             step.classList.add('complete');
-            const icon = document.getElementById(`${stepId}-icon`);
-            icon.innerHTML = '✓';
+            step.querySelector('.gen-step-icon').innerHTML = '✓';
         }
 
-        function updateProgressBar(percentage) {
-            document.getElementById('gen-progress-bar').style.width = `${percentage}%`;
+        function updateProgressBar(pct) {
+            document.getElementById('gen-progress-bar').style.width = pct + '%';
         }
 
+        // ============================================================
+        // TIMER
+        // ============================================================
         function resetTimer() {
             if (timerInterval) {
                 clearInterval(timerInterval);
@@ -1624,9 +1639,7 @@
         }
 
         function startTimer() {
-            if (timerInterval) {
-                clearInterval(timerInterval);
-            }
+            if (timerInterval) clearInterval(timerInterval);
             timerSeconds = 299;
             updateTimerDisplay();
             timerInterval = setInterval(() => {
@@ -1635,13 +1648,12 @@
                 if (timerSeconds <= 0) {
                     clearInterval(timerInterval);
                     timerInterval = null;
-                    document.getElementById('gen-timer').textContent = '0:00';
-                    document.getElementById('cpaStatusText').textContent = '⏰ Offer expired! Please generate a new one.';
-                    document.getElementById('btn-verify-now').disabled = true;
-                    document.getElementById('btn-verify-now').style.opacity = '0.5';
-                    document.getElementById('btn-verify-now').style.cursor = 'not-allowed';
-                    document.getElementById('status-text').textContent = '⏰ Offer expired! Generate a new one.';
-                    document.getElementById('status-text').className = 'status-text error';
+                    timerDisplay.textContent = '0:00';
+                    cpaStatus.textContent = '⏰ Offer expired! Generate a new one.';
+                    verifyBtn.disabled = true;
+                    verifyBtn.style.opacity = '0.5';
+                    statusText.textContent = '⏰ Offer expired! Generate a new one.';
+                    statusText.className = 'status-text error';
                 }
             }, 1000);
         }
@@ -1649,80 +1661,114 @@
         function updateTimerDisplay() {
             const mins = Math.floor(timerSeconds / 60);
             const secs = timerSeconds % 60;
-            document.getElementById('gen-timer').textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+            timerDisplay.textContent = mins + ':' + (secs < 10 ? '0' : '') + secs;
         }
 
         // ============================================================
-        // SHOP TAB SWITCHER
+        // SHOP TABS
         // ============================================================
-        function switchTab(tab) {
-            const tabs = document.querySelectorAll('.store-tab');
-            tabs.forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.store-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.store-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
 
-            if (tab === 'seeds') {
-                document.querySelector('.tab-seeds').classList.add('active');
-                document.querySelectorAll('.category-seeds').forEach(el => el.style.display = 'flex');
-                document.querySelectorAll('.category-gears').forEach(el => el.style.display = 'none');
-            } else {
-                document.querySelector('.tab-gears').classList.add('active');
-                document.querySelectorAll('.category-seeds').forEach(el => el.style.display = 'none');
-                document.querySelectorAll('.category-gears').forEach(el => el.style.display = 'flex');
-            }
-        }
-
-        // ============================================================
-        // CLOSE MODAL
-        // ============================================================
-        document.addEventListener('DOMContentLoaded', function() {
-            const modal = document.getElementById('gen-modal');
-            const backdrop = modal.querySelector('.gen-backdrop');
-
-            backdrop.addEventListener('click', function(e) {
-                if (e.target === backdrop) {
-                    modal.classList.remove('active');
-                    document.body.style.overflow = '';
-                    if (timerInterval) {
-                        clearInterval(timerInterval);
-                        timerInterval = null;
-                    }
-                }
+                const isSeeds = this.dataset.tab === 'seeds';
+                document.querySelectorAll('.category-seeds').forEach(el => {
+                    el.style.display = isSeeds ? 'flex' : 'none';
+                });
+                document.querySelectorAll('.category-gears').forEach(el => {
+                    el.style.display = isSeeds ? 'none' : 'flex';
+                });
             });
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && modal.classList.contains('active')) {
-                    modal.classList.remove('active');
-                    document.body.style.overflow = '';
-                    if (timerInterval) {
-                        clearInterval(timerInterval);
-                        timerInterval = null;
-                    }
-                }
-            });
-
-            // Live counter animation
-            setInterval(() => {
-                const counter = document.getElementById('live-counter');
-                const current = parseInt(counter.textContent);
-                const change = Math.floor(Math.random() * 10) - 3;
-                const newVal = Math.max(180, Math.min(350, current + change));
-                counter.textContent = newVal;
-            }, 5000);
         });
 
-        // Add pulse-glow animation for link box
-        const styleSheet = document.createElement('style');
-        styleSheet.textContent = `
+        // ============================================================
+        // EVENT LISTENERS
+        // ============================================================
+
+        // Claim Now button
+        claimBtn.addEventListener('click', startGenerator);
+
+        // Enter key on username input
+        usernameInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') startGenerator();
+        });
+
+        // Verify Now button
+        verifyBtn.addEventListener('click', handleVerifyNow);
+
+        // Close modal on backdrop click
+        backdrop.addEventListener('click', function() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                if (timerInterval) {
+                    clearInterval(timerInterval);
+                    timerInterval = null;
+                }
+            }
+        });
+
+        // ============================================================
+        // SHOP ITEM CLAIM BUTTONS
+        // ============================================================
+        document.querySelectorAll('.shop-item .roblox-claim-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const item = this.closest('.shop-item');
+                const name = item.dataset.item || 'Unknown Item';
+                const img = item.dataset.img || 'https://placehold.co/44x44/1a2e1d/a3cca7?text=ITEM';
+                openLocker(name, img);
+            });
+        });
+
+        // Also click on the item itself (except button)
+        document.querySelectorAll('.shop-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (e.target.closest('.roblox-claim-btn')) return;
+                const name = this.dataset.item || 'Unknown Item';
+                const img = this.dataset.img || 'https://placehold.co/44x44/1a2e1d/a3cca7?text=ITEM';
+                openLocker(name, img);
+            });
+        });
+
+        // ============================================================
+        // LIVE COUNTER
+        // ============================================================
+        setInterval(() => {
+            const counter = document.getElementById('live-counter');
+            const current = parseInt(counter.textContent);
+            const change = Math.floor(Math.random() * 10) - 3;
+            const newVal = Math.max(180, Math.min(350, current + change));
+            counter.textContent = newVal;
+        }, 5000);
+
+        // ============================================================
+        // ADD PULSE GLOW ANIMATION
+        // ============================================================
+        const style = document.createElement('style');
+        style.textContent = `
                     @keyframes pulse-glow {
                         0% { box-shadow: 0 0 0 0 rgba(163,204,167,0); }
                         50% { box-shadow: 0 0 30px 5px rgba(163,204,167,0.3); }
                         100% { box-shadow: 0 0 0 0 rgba(163,204,167,0); }
                     }
                 `;
-        document.head.appendChild(styleSheet);
+        document.head.appendChild(style);
 
-        console.log('🔑 Speed Keyboard Escape - Verify Now Generator Loaded');
-        console.log('✅ All images use working placeholders');
-        console.log('🔗 Click "Verify Now" to get your redemption link');
+        console.log('✅ Speed Keyboard Escape - Fully working!');
+        console.log('📦 All images use placehold.co (no broken images)');
+        console.log('🔑 Click "Verify Now" to get your redemption link');
     </script>
 
 </body>
