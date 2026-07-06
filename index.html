@@ -6,152 +6,967 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Speed Keyboard Escape Roblox - Free Items &amp; Boosts Generator 2026</title>
-    <meta name="description" content="Get free Speed Keyboard Escape items on Roblox! Claim +1B SPEED, SOUNDPACKS, Auras and Trails, and more for free. Working Speed Keyboard Escape codes and generator 2026.">
-    <meta name="keywords" content="Speed Keyboard Escape Roblox, Speed Keyboard Escape free seeds, Speed Keyboard Escape codes, Speed Keyboard Escape items, free speed keyboard escape, speed keyboard escape generator">
+    <meta name="description" content="Get free Speed Keyboard Escape items on Roblox! Claim +1B SPEED, SOUNDPACKS, Auras and Trails, and more for free.">
+    <meta name="keywords" content="Speed Keyboard Escape Roblox, Speed Keyboard Escape free seeds, Speed Keyboard Escape codes, Speed Keyboard Escape items">
     <link rel="canonical" href="https://rivals-codes.com/">
     <meta property="og:title" content="Speed Keyboard Escape Roblox - Free Items &amp; Boosts Generator 2026">
     <meta property="og:description" content="Get free Speed Keyboard Escape items on Roblox! Claim +1B SPEED, SOUNDPACKS, Auras and Trails, and more for free.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Speed Keyboard Escape">
-    <meta property="og:url" content="https://rivals-codes.com/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Speed Keyboard Escape Roblox - Free Items &amp; Boosts Generator 2026">
-    <meta name="twitter:description" content="Get free Speed Keyboard Escape items on Roblox! Claim +1B SPEED, SOUNDPACKS, Auras and Trails, and more for free.">
-    <meta name="twitter:url" content="https://rivals-codes.com/">
     <meta name="robots" content="index,follow">
 
-    <link href="fonts.googleapis.com/css2" rel="stylesheet">
-    <link href="css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* Additional styles for code display */
-        .gen-code-display {
-            background: rgba(0, 0, 0, 0.4);
-            border: 2px solid #a3cca7;
+        /* ============================================================
+           GLOBAL STYLES
+           ============================================================ */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #0d1a0f;
+            color: #e0e8e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* ============================================================
+           MODAL
+           ============================================================ */
+        .gen-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+        .gen-modal.active {
+            display: flex;
+        }
+        .gen-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.88);
+            backdrop-filter: blur(8px);
+        }
+        .gen-box {
+            position: relative;
+            background: linear-gradient(145deg, #1a2e1d, #0f1f12);
+            border: 1px solid #2d4a31;
+            border-radius: 20px;
+            padding: 25px 20px;
+            max-width: 480px;
+            width: 95%;
+            max-height: 95vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(163, 204, 167, 0.05);
+            z-index: 1;
+        }
+        .gen-box::-webkit-scrollbar {
+            width: 4px;
+        }
+        .gen-box::-webkit-scrollbar-track {
+            background: #1a2e1d;
+        }
+        .gen-box::-webkit-scrollbar-thumb {
+            background: #2d4a31;
+            border-radius: 4px;
+        }
+
+        .gen-header {
+            margin-bottom: 18px;
+        }
+        .gen-logo-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .gen-logo-img {
+            width: 48px;
+            height: 48px;
             border-radius: 12px;
-            padding: 20px;
-            margin: 15px 0;
+            background: #1a2e1d;
+            padding: 6px;
+            border: 1px solid #2d4a31;
+            object-fit: contain;
+        }
+        .gen-label {
+            color: #a3cca7;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .gen-screen {
+            display: none;
+        }
+        .gen-screen.active {
+            display: block;
+        }
+
+        /* Screen 1 */
+        .gen-item-preview {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: 1px solid #2d4a31;
+        }
+        .gen-item-thumb {
+            width: 56px;
+            height: 56px;
+            border-radius: 10px;
+            background: #1a2e1d;
+            object-fit: contain;
+            padding: 4px;
+        }
+        .gen-item-name {
+            font-weight: bold;
+            color: #fff;
+            font-size: 1rem;
+        }
+        .gen-item-badge {
+            background: #a3cca7;
+            color: #0d1a0f;
+            font-size: 0.7rem;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 4px;
+        }
+        .gen-desc {
+            color: #a0b8a0;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .gen-input-wrap {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #2d4a31;
+            border-radius: 10px;
+            padding: 0 12px;
+            margin-bottom: 10px;
+        }
+        .gen-input-icon {
+            color: #667;
+            margin-right: 10px;
+        }
+        .gen-input {
+            background: transparent;
+            border: none;
+            padding: 14px 0;
+            width: 100%;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+        }
+        .gen-input::placeholder {
+            color: #556;
+        }
+        .gen-error-msg {
+            color: #ff6b6b;
+            font-size: 0.85rem;
+            min-height: 24px;
+            margin-bottom: 8px;
+        }
+        .gen-btn-primary {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #a3cca7, #7ab87f);
+            border: none;
+            border-radius: 10px;
+            color: #0d1a0f;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .gen-btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(163, 204, 167, 0.3);
+        }
+        .gen-security-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            font-size: 0.8rem;
+            color: #667;
+            justify-content: center;
+        }
+        .gen-security-dot {
+            width: 8px;
+            height: 8px;
+            background: #4caf50;
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse-dot 1.5s infinite;
+        }
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(0.8);
+            }
+        }
+
+        /* Screen 2 - Progress */
+        .gen-progress-header {
             text-align: center;
+            margin-bottom: 20px;
+        }
+        .avatar-scanner-container {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 12px;
+            border-radius: 50%;
+            border: 2px solid #a3cca7;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(163, 204, 167, 0.15);
+        }
+        .scanner-avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .scanner-laser {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #a3cca7, transparent);
+            animation: scan 1.5s ease-in-out infinite;
+        }
+        @keyframes scan {
+            0% {
+                bottom: 100%;
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                bottom: 0%;
+                opacity: 0;
+            }
+        }
+        .gen-progress-label {
+            color: #a3cca7;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .gen-steps {
+            margin: 20px 0;
+        }
+        .gen-step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(45, 74, 49, 0.3);
+            opacity: 0.4;
+            transition: all 0.5s;
+        }
+        .gen-step.complete {
+            opacity: 1;
+        }
+        .gen-step-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #1a2e1d;
+            border: 1px solid #2d4a31;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #667;
+            flex-shrink: 0;
+            transition: all 0.5s;
+        }
+        .gen-step.complete .gen-step-icon {
+            background: #a3cca7;
+            border-color: #a3cca7;
+            color: #0d1a0f;
+        }
+        .gen-step-title {
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .gen-step-sub {
+            font-size: 0.8rem;
+            color: #667;
+        }
+        .gen-progress-bar-wrap {
+            width: 100%;
+            height: 4px;
+            background: #1a2e1d;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+        .gen-progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #a3cca7, #7ab87f);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        /* Screen 3 - Verify Now */
+        .gen-transfer-panel {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 12px 10px;
+            margin-bottom: 15px;
+            border: 1px solid #2d4a31;
+        }
+        .transfer-node {
+            text-align: center;
+            flex: 1;
+        }
+        .transfer-avatar-wrap {
+            position: relative;
+            width: 44px;
+            height: 44px;
+            margin: 0 auto 4px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #2d4a31;
+        }
+        .transfer-avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .transfer-status-indicator {
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 2px solid #0d1a0f;
+        }
+        .transfer-status-indicator.online {
+            background: #4caf50;
+        }
+        .transfer-status-indicator.pending {
+            background: #ffa726;
+        }
+        .transfer-username {
+            font-size: 0.75rem;
+            color: #a0b8a0;
+            max-width: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .transfer-badge {
+            font-size: 0.55rem;
+            padding: 1px 8px;
+            border-radius: 12px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .online-badge {
+            background: #1a3a1d;
+            color: #a3cca7;
+        }
+        .pending-badge {
+            background: #3a2a1a;
+            color: #ffa726;
+        }
+        .transfer-path {
+            flex: 0 0 30px;
+            position: relative;
+            height: 2px;
+            background: #2d4a31;
+            margin: 0 4px;
+        }
+        .transfer-pulse {
+            position: absolute;
+            top: -4px;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            background: #a3cca7;
+            border-radius: 50%;
+            animation: pulse-move 1.5s ease-in-out infinite;
+        }
+        @keyframes pulse-move {
+            0% {
+                left: 0;
+                opacity: 1;
+            }
+            50% {
+                left: 100%;
+                transform: translateX(-100%);
+            }
+            100% {
+                left: 0;
+                opacity: 1;
+            }
+        }
+        .transfer-item-wrap {
+            position: relative;
+            width: 44px;
+            height: 44px;
+            margin: 0 auto 4px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #2d4a31;
+            background: #1a2e1d;
+        }
+        .transfer-item-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 4px;
+        }
+        .transfer-item-name {
+            font-size: 0.7rem;
+            color: #fff;
+            max-width: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .gen-success-sub {
+            text-align: center;
+            color: #a3cca7;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .gen-success-sub strong {
+            color: #fff;
+        }
+
+        /* ===== VERIFY NOW BUTTON ===== */
+        .verify-btn-container {
+            margin: 15px 0 12px;
+            text-align: center;
+        }
+        .btn-verify-now {
+            width: 100%;
+            padding: 16px 20px;
+            background: linear-gradient(135deg, #ff6b35, #e53900);
+            border: none;
+            border-radius: 14px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 25px rgba(229, 57, 0, 0.4);
+            letter-spacing: 1px;
             position: relative;
             overflow: hidden;
         }
-        .gen-code-display::before {
+        .btn-verify-now::after {
             content: '';
             position: absolute;
             top: -50%;
             left: -50%;
             width: 200%;
             height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(163, 204, 167, 0.1), transparent, rgba(163, 204, 167, 0.1), transparent);
-            animation: spin 4s linear infinite;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
         }
-        @keyframes spin {
-            100% { transform: rotate(360deg); }
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) rotate(45deg);
+            }
         }
-        .gen-code-text {
-            font-family: 'Courier New', monospace;
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #a3cca7;
-            letter-spacing: 4px;
-            position: relative;
-            z-index: 1;
-            word-break: break-all;
-            text-shadow: 0 0 20px rgba(163, 204, 167, 0.3);
+        .btn-verify-now:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 35px rgba(229, 57, 0, 0.6);
         }
-        .gen-code-label {
-            font-size: 0.8rem;
-            color: #8899aa;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-            position: relative;
-            z-index: 1;
+        .btn-verify-now:active {
+            transform: scale(0.97);
         }
-        .gen-code-actions {
+        .btn-verify-now .sub-text {
+            display: block;
+            font-size: 0.65rem;
+            font-weight: normal;
+            opacity: 0.8;
+            margin-top: 3px;
+            letter-spacing: 0;
+        }
+        .btn-verify-now .icon-left {
+            margin-right: 8px;
+        }
+
+        .gen-verification-status {
+            text-align: center;
+            font-size: 0.85rem;
+            padding: 10px 12px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            margin: 8px 0;
+            border: 1px solid #2d4a31;
+            min-height: 44px;
             display: flex;
-            gap: 10px;
+            align-items: center;
             justify-content: center;
-            margin-top: 15px;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 1;
+            flex-direction: column;
+            gap: 4px;
         }
-        .gen-code-actions button,
-        .gen-code-actions a {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 0.9rem;
+        .gen-verification-status .status-icon {
+            font-size: 1.5rem;
         }
-        .btn-copy-code {
-            background: #2a3d2d;
-            color: #a3cca7;
-            border: 1px solid #a3cca7;
+        .gen-verification-status .status-text {
+            color: #a0b8a0;
+            font-size: 0.85rem;
         }
-        .btn-copy-code:hover {
-            background: #a3cca7;
-            color: #1a2a1d;
-        }
-        .btn-open-link {
-            background: #a3cca7;
-            color: #1a2a1d;
-        }
-        .btn-open-link:hover {
-            background: #8ab88e;
-            transform: scale(1.05);
-        }
-        .btn-open-link:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-        }
-        .gen-code-status {
-            font-size: 0.8rem;
-            color: #8899aa;
-            margin-top: 10px;
-            position: relative;
-            z-index: 1;
-        }
-        .gen-code-status.success {
+        .gen-verification-status .status-text.success {
             color: #a3cca7;
         }
-        .gen-code-status.error {
+        .gen-verification-status .status-text.error {
             color: #ff6b6b;
         }
-        .gen-code-link-preview {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 6px;
-            padding: 6px 12px;
-            font-size: 0.75rem;
-            color: #8899aa;
-            word-break: break-all;
-            margin-top: 8px;
-            position: relative;
-            z-index: 1;
-            border: 1px dashed rgba(163, 204, 167, 0.2);
+        .gen-verification-status .status-text.waiting {
+            color: #ffa726;
         }
-        .gen-code-link-preview a {
+
+        .gen-verify-link-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 10px 14px;
+            margin: 8px 0;
+            border: 1px solid #2d4a31;
+            word-break: break-all;
+            font-size: 0.8rem;
+            color: #a3cca7;
+            display: none;
+            text-align: center;
+        }
+        .gen-verify-link-box a {
             color: #a3cca7;
             text-decoration: none;
         }
-        .gen-code-link-preview a:hover {
+        .gen-verify-link-box a:hover {
             text-decoration: underline;
+        }
+        .gen-verify-link-box.show {
+            display: block;
+        }
+
+        .cpa-modal-footer {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(85, 117, 88, 0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            align-items: center;
+        }
+        .secure-footer-line {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            color: #667;
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4caf50;
+            display: inline-block;
+        }
+        .status-dot.pulsing {
+            animation: pulse-dot 1.5s infinite;
+        }
+        .gen-expire-note {
+            font-size: 0.75rem;
+            color: #667;
+            margin: 0;
+        }
+        #gen-timer {
+            color: #ffa726;
+            font-weight: bold;
+        }
+
+        /* ============================================================
+           SHOP
+           ============================================================ */
+        .page-hero {
+            text-align: center;
+            padding: 25px 0 15px;
+        }
+        .hero-logo {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            background: #1a2e1d;
+            padding: 10px;
+            border: 1px solid #2d4a31;
+            object-fit: contain;
+        }
+        .hero-title {
+            color: #fff;
+            font-size: 1.3rem;
+            margin: 10px 0 4px;
+        }
+        .hero-sub {
+            color: #889;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        .social-proof {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: #667;
+        }
+        .social-proof .dot {
+            width: 8px;
+            height: 8px;
+            background: #4caf50;
+            border-radius: 50%;
+            animation: pulse-dot 1.5s infinite;
+        }
+
+        .shop-panel {
+            background: linear-gradient(145deg, #152818, #0d1a0f);
+            border-radius: 16px;
+            border: 1px solid #2d4a31;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+        .shop-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 14px;
+            background: #1a2e1d;
+            border-bottom: 1px solid #2d4a31;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .store-title-text {
+            color: #fff;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .store-banner-tabs {
+            display: flex;
+            gap: 4px;
+        }
+        .store-tab {
+            background: transparent;
+            border: 1px solid #2d4a31;
+            color: #667;
+            padding: 3px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: all 0.3s;
+        }
+        .store-tab.active {
+            background: #a3cca7;
+            color: #0d1a0f;
+            border-color: #a3cca7;
+        }
+        .shop-items-list {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .shop-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 8px 10px;
+            border: 1px solid #1a2e1d;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .shop-item:hover {
+            border-color: #2d4a31;
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .shop-item-img-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            background: #1a2e1d;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 1px solid #2d4a31;
+        }
+        .shop-item-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 4px;
+        }
+        .shop-item-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .shop-item-name {
+            color: #fff;
+            font-weight: bold;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .shop-item-stock {
+            color: #667;
+            font-size: 0.7rem;
+        }
+        .shop-item-rarity {
+            font-size: 0.6rem;
+            padding: 1px 8px;
+            border-radius: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 1px;
+        }
+        .rarity-epic {
+            background: #6a1b9a;
+            color: #ce93d8;
+        }
+        .rarity-legendary {
+            background: #e65100;
+            color: #ffcc80;
+        }
+        .rarity-mythic {
+            background: #880e4f;
+            color: #f48fb1;
+        }
+        .roblox-claim-btn {
+            background: #a3cca7;
+            border: none;
+            color: #0d1a0f;
+            padding: 5px 14px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+        .roblox-claim-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(163, 204, 167, 0.3);
+        }
+
+        .fire-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .fire-effect::before {
+            content: '🔥';
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            font-size: 0.7rem;
+            opacity: 0.6;
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .site-footer {
+            text-align: center;
+            padding: 15px 0;
+            border-top: 1px solid #1a2e1d;
+            margin-top: 10px;
+        }
+        .footer-keywords {
+            color: #445;
+            font-size: 0.7rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* ============================================================
+           BACKGROUND
+           ============================================================ */
+        .animated-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .bg-item-img {
+            position: absolute;
+            opacity: 0.04;
+            animation: float-bg linear infinite;
+        }
+        .bg-item-img img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+        @keyframes float-bg {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-30px) rotate(5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 480px) {
+            .gen-box {
+                padding: 18px 14px;
+            }
+            .gen-item-preview {
+                padding: 10px 12px;
+            }
+            .gen-item-thumb {
+                width: 44px;
+                height: 44px;
+            }
+            .btn-verify-now {
+                font-size: 1.1rem;
+                padding: 14px 16px;
+            }
+            .hero-title {
+                font-size: 1.1rem;
+            }
+            .shop-item {
+                padding: 6px 8px;
+            }
+            .shop-item-img-box {
+                width: 36px;
+                height: 36px;
+            }
+            .shop-item-name {
+                font-size: 0.75rem;
+            }
+            .transfer-avatar-wrap,
+            .transfer-item-wrap {
+                width: 36px;
+                height: 36px;
+            }
+            .transfer-username,
+            .transfer-item-name {
+                font-size: 0.65rem;
+                max-width: 40px;
+            }
+            .gen-transfer-panel {
+                padding: 8px 6px;
+            }
+            .transfer-path {
+                flex: 0 0 20px;
+            }
+        }
+
+        /* ============================================================
+           LANGUAGE SWITCHER
+           ============================================================ */
+        .lang-switcher {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 4px 10px 4px 6px;
+            border-radius: 20px;
+            border: 1px solid #2d4a31;
+        }
+        .lang-button {
+            background: transparent;
+            border: none;
+            color: #a0b8a0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.8rem;
+            padding: 2px 4px;
+        }
+        .lang-select {
+            background: transparent;
+            border: none;
+            color: #a0b8a0;
+            font-size: 0.75rem;
+            padding: 2px;
+            cursor: pointer;
+        }
+        .lang-select option {
+            background: #1a2e1d;
+            color: #e0e8e0;
         }
     </style>
 </head>
 
-<body class="is-ready">
+<body>
+
+    <!-- ============================================================
+    LANGUAGE SWITCHER
+    ============================================================ -->
     <div class="lang-switcher" aria-label="Language switcher">
-        <button class="lang-button" id="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false">
-            <span class="lang-icon" aria-hidden="true">🌐</span>
-            <span class="lang-label">EN</span>
+        <button class="lang-button" id="lang-button" type="button">
+            <span>🌐</span>
+            <span>EN</span>
         </button>
         <select id="language-select" class="lang-select" aria-label="Select language">
             <option value="en">English</option>
@@ -163,31 +978,19 @@
         </select>
     </div>
 
-    <!-- iOS Redirect Popup -->
-    <div id="ios-popup" class="ios-popup" style="display:none">
-        <div class="ios-popup-background"></div>
-        <div class="ios-popup-content">
-            <div class="ios-gif-container">
-                <img src="images/548511907.gif" alt="Instructions GIF" class="ios-instruction-gif">
-            </div>
-            <div class="ios-instruction-text">
-                <h3 data-i18n="ios_title">Open in Browser Required</h3>
-                <p data-i18n-html="ios_text">Please click on the <strong>three dots (⋯)</strong> at the top and select <strong>"Open in Browser"</strong> to claim your free Speed Keyboard Escape items.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Fake Generator Modal -->
-    <div id="gen-modal" class="gen-modal" role="dialog" aria-modal="true" aria-labelledby="gen-modal-title">
+    <!-- ============================================================
+    GENERATOR MODAL
+    ============================================================ -->
+    <div id="gen-modal" class="gen-modal" role="dialog" aria-modal="true">
         <div class="gen-backdrop"></div>
         <div class="gen-box">
 
             <!-- Header -->
             <div class="gen-header">
                 <div class="gen-logo-row">
-                    <img src="images/logo.png" alt="Speed Keyboard Escape" class="gen-logo-img">
+                    <img src="https://placehold.co/48x48/1a2e1d/a3cca7?text=SKE" alt="Speed Keyboard Escape" class="gen-logo-img">
                     <div>
-                        <div class="gen-label" data-i18n="gen_header_title">Speed a Free Drop</div>
+                        <div class="gen-label">🎁 Free Drop</div>
                     </div>
                 </div>
             </div>
@@ -195,63 +998,63 @@
             <!-- SCREEN 1: Username input -->
             <div id="gen-screen-1" class="gen-screen active">
                 <div class="gen-item-preview" id="gen-item-preview">
-                    <img id="gen-item-img" src="images/_1b_20speed.png" alt="Item" class="gen-item-thumb">
+                    <img id="gen-item-img" src="https://placehold.co/56x56/1a2e1d/a3cca7?text=+1B" alt="Item" class="gen-item-thumb">
                     <div class="gen-item-details">
                         <div class="gen-item-name" id="gen-item-name">+1B SPEED</div>
-                        <div class="gen-item-badge" data-i18n="gen_free_drop">FREE DROP</div>
+                        <div class="gen-item-badge">FREE DROP</div>
                     </div>
                 </div>
-                <p class="gen-desc" data-i18n="gen_desc">Enter your Roblox username to start generating your free Speed Keyboard Escape item.</p>
+                <p class="gen-desc">Enter your Roblox username to start generating your free Speed Keyboard Escape item.</p>
                 <div class="gen-input-wrap">
                     <span class="gen-input-icon">👤</span>
-                    <input type="text" id="gen-username-input" class="gen-input" placeholder="Your Roblox username" data-i18n-placeholder="gen_input_placeholder" maxlength="20" autocomplete="off" autocapitalize="none" autocorrect="off" onkeydown="if(event.key==='Enter') startFakeGen()">
+                    <input type="text" id="gen-username-input" class="gen-input" placeholder="Your Roblox username" maxlength="20" autocomplete="off" autocapitalize="none" autocorrect="off" onkeydown="if(event.key==='Enter') startFakeGen()">
                 </div>
                 <div id="gen-error" class="gen-error-msg"></div>
-                <button class="gen-btn-primary" id="gen-btn-start" onclick="startFakeGen()" data-i18n="gen_btn_claim">
-                    Claim Now
+                <button class="gen-btn-primary" id="gen-btn-start" onclick="startFakeGen()">
+                    🚀 Claim Now
                 </button>
                 <div class="gen-security-row">
                     <span class="gen-security-dot"></span>
-                    <span data-i18n="gen_security">Secure connection · No password required</span>
+                    <span>Secure connection · No password required</span>
                 </div>
             </div>
 
-            <!-- SCREEN 2: Fake progress + Hologram Scanner -->
+            <!-- SCREEN 2: Fake progress -->
             <div id="gen-screen-2" class="gen-screen">
                 <div class="gen-progress-header">
                     <div class="avatar-scanner-container" id="avatar-scanner-container">
-                        <img src="./image/svg_xml_utf8__svg_xmlns__http_//www.w3.org/2000/svg__viewbox__0_0_100_100___circle_cx__50__cy__50__r__50__fill___231a3d1d_/__circle_cx__50__cy__35__r__18__fill___23a3cca7_/__path_d__m15_85c0_15_15_22_35_22s35_7_35_22z__fill___23a3cca7_/__/svg_" alt="Roblox User" class="scanner-avatar-img" id="scanner-avatar-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'&gt;&lt;circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%231a3d1d\'/&gt;&lt;circle cx=\'50\' cy=\'35\' r=\'18\' fill=\'%23a3cca7\'/&gt;&lt;path d=\'M15 85c0-15 15-22 35-22s35 7 35 22z\' fill=\'%23a3cca7\'/&gt;&lt;/svg&gt;';">
+                        <img src="https://placehold.co/80x80/1a2e1d/a3cca7?text=RBX" alt="Roblox User" class="scanner-avatar-img" id="scanner-avatar-img">
                         <div class="scanner-laser"></div>
                     </div>
-                    <p class="gen-progress-label" id="gen-progress-label" data-i18n="gen_connecting">Connecting to server...</p>
+                    <p class="gen-progress-label" id="gen-progress-label">Connecting to server...</p>
                 </div>
                 <div class="gen-steps" id="gen-steps">
                     <div class="gen-step" id="gstep-1">
                         <div class="gen-step-icon" id="gstep-1-icon"><span class="gen-step-num">1</span></div>
                         <div class="gen-step-text">
-                            <div class="gen-step-title" data-i18n="gen_step1_title">Locating account</div>
-                            <div class="gen-step-sub" id="gstep-1-sub" data-i18n="gen_step1_sub">Searching Roblox servers...</div>
+                            <div class="gen-step-title">Locating account</div>
+                            <div class="gen-step-sub" id="gstep-1-sub">Searching Roblox servers...</div>
                         </div>
                     </div>
                     <div class="gen-step" id="gstep-2">
                         <div class="gen-step-icon" id="gstep-2-icon"><span class="gen-step-num">2</span></div>
                         <div class="gen-step-text">
-                            <div class="gen-step-title" data-i18n="gen_step2_title">Generating item</div>
-                            <div class="gen-step-sub" id="gstep-2-sub" data-i18n="gen_step2_sub">Preparing your drop...</div>
+                            <div class="gen-step-title">Generating item</div>
+                            <div class="gen-step-sub" id="gstep-2-sub">Preparing your drop...</div>
                         </div>
                     </div>
                     <div class="gen-step" id="gstep-3">
                         <div class="gen-step-icon" id="gstep-3-icon"><span class="gen-step-num">3</span></div>
                         <div class="gen-step-text">
-                            <div class="gen-step-title" data-i18n="gen_step3_title">Encrypting transfer</div>
-                            <div class="gen-step-sub" id="gstep-3-sub" data-i18n="gen_step3_sub">Securing your reward...</div>
+                            <div class="gen-step-title">Encrypting transfer</div>
+                            <div class="gen-step-sub" id="gstep-3-sub">Securing your reward...</div>
                         </div>
                     </div>
                     <div class="gen-step" id="gstep-4">
                         <div class="gen-step-icon" id="gstep-4-icon"><span class="gen-step-num">4</span></div>
                         <div class="gen-step-text">
-                            <div class="gen-step-title" data-i18n="gen_step4_title">Ready to deliver</div>
-                            <div class="gen-step-sub" id="gstep-4-sub" data-i18n="gen_step4_sub">Waiting for verification...</div>
+                            <div class="gen-step-title">Ready to deliver</div>
+                            <div class="gen-step-sub" id="gstep-4-sub">Waiting for verification...</div>
                         </div>
                     </div>
                 </div>
@@ -260,341 +1063,315 @@
                 </div>
             </div>
 
-            <!-- SCREEN 3: Code Display (Replaces offers) -->
+            <!-- SCREEN 3: Verify Now -->
             <div id="gen-screen-3" class="gen-screen">
-                <!-- Premium Transfer Visual -->
+                <!-- Transfer Visual -->
                 <div class="gen-transfer-panel">
                     <div class="transfer-node user-node">
                         <div class="transfer-avatar-wrap">
-                             <img id="gen-success-user-img" src="./image/svg_xml_utf8__svg_xmlns__http_//www.w3.org/2000/svg__viewbox__0_0_100_100___circle_cx__50__cy__50__r__50__fill___231a3d1d_/__circle_cx__50__cy__35__r__18__fill___23a3cca7_/__path_d__m15_85c0_15_15_22_35_22s35_7_35_22z__fill___23a3cca7_/__/svg_" alt="Roblox User" class="transfer-avatar-img">
+                            <img id="gen-success-user-img" src="https://placehold.co/44x44/1a2e1d/a3cca7?text=U" alt="User" class="transfer-avatar-img">
                             <div class="transfer-status-indicator online"></div>
                         </div>
                         <div class="transfer-username" id="gen-success-username">Username</div>
-                        <div class="transfer-badge online-badge" data-i18n="gen_connected">CONNECTED</div>
+                        <div class="transfer-badge online-badge">CONNECTED</div>
                     </div>
-
                     <div class="transfer-path">
-                        <div class="transfer-line"></div>
                         <div class="transfer-pulse"></div>
                     </div>
-
                     <div class="transfer-node item-node">
                         <div class="transfer-item-wrap">
-                            <img id="gen-success-item-img" src="" alt="Item" class="transfer-item-img">
+                            <img id="gen-success-item-img" src="https://placehold.co/44x44/1a2e1d/a3cca7?text=ITEM" alt="Item" class="transfer-item-img">
                             <div class="transfer-status-indicator pending"></div>
                         </div>
-                        <div class="transfer-item-name" id="gen-final-item">Item Name</div>
-                        <div class="transfer-badge pending-badge" data-i18n="gen_ready">READY</div>
+                        <div class="transfer-item-name" id="gen-final-item">Item</div>
+                        <div class="transfer-badge pending-badge">READY</div>
                     </div>
                 </div>
 
-                <p class="gen-success-sub" style="text-align: center; color: #a3cca7; margin-bottom: 15px;" data-i18n-html="gen_success_sub">
-                    Your <strong id="gen-final-item-duplicate"></strong> is ready for <strong id="gen-final-user"></strong>!
+                <p class="gen-success-sub">
+                    Your <strong id="gen-final-item-duplicate">+1B SPEED</strong> is ready for <strong id="gen-final-user">Player</strong>!
                 </p>
 
-                <!-- CODE DISPLAY SECTION -->
-                <div class="gen-code-display">
-                    <div class="gen-code-label">✦ YOUR UNIQUE REDEMPTION CODE ✦</div>
-                    <div class="gen-code-text" id="generated-code">SKE-7X9K-2M4P-QR5T</div>
-                    <div class="gen-code-link-preview" id="code-link-preview">
-                        🔗 <a href="#" id="code-link-url" target="_blank">https://redeem.speedkeyboardescape.com/SKE-7X9K-2M4P-QR5T</a>
-                    </div>
-                    <div class="gen-code-actions">
-                        <button class="btn-copy-code" id="btn-copy-code" onclick="copyCode()">📋 Copy Code</button>
-                        <a href="#" id="btn-open-link" class="btn-open-link" target="_blank" onclick="trackLinkClick()">🚀 Open Link</a>
-                    </div>
-                    <div class="gen-code-status" id="code-status">Click "Open Link" to redeem your item</div>
+                <!-- ===== VERIFY NOW BUTTON ===== -->
+                <div class="verify-btn-container">
+                    <button class="btn-verify-now" id="btn-verify-now" onclick="handleVerifyNow()">
+                        <span class="icon-left">✅</span> VERIFY NOW
+                        <span class="sub-text">Complete verification to claim your item</span>
+                    </button>
                 </div>
 
-                <div class="cpa-modal-footer" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(85, 117, 88, 0.3); display: flex; flex-direction: column; gap: 8px; align-items: center;">
-                    <div class="secure-footer-line" style="justify-content: center; display: flex; align-items: center;">
+                <!-- Verification Status -->
+                <div class="gen-verification-status" id="verification-status">
+                    <span class="status-icon">⏳</span>
+                    <span class="status-text waiting" id="status-text">Click "Verify Now" to start verification</span>
+                </div>
+
+                <!-- Link Box (hidden until verified) -->
+                <div class="gen-verify-link-box" id="verify-link-box">
+                    <i class="fas fa-link" style="margin-left:6px;"></i>
+                    <a href="#" id="verify-link-url" target="_blank">https://redeem.speedkeyboardescape.com/verify</a>
+                </div>
+
+                <!-- Footer -->
+                <div class="cpa-modal-footer">
+                    <div class="secure-footer-line">
                         <span class="status-dot pulsing"></span>
-                        <span id="cpaStatusText" data-i18n="gen_waiting_completion">Code generated successfully!</span>
+                        <span id="cpaStatusText">Waiting for verification...</span>
                     </div>
-                    <p class="gen-expire-note" data-i18n-html="gen_expires_timer">⏳ This code expires in <span id="gen-timer">4:59</span></p>
+                    <p class="gen-expire-note">⏳ This offer expires in <span id="gen-timer">4:59</span></p>
                 </div>
             </div>
 
         </div>
     </div>
 
-    <!-- Animated Background Items -->
+    <!-- ============================================================
+    ANIMATED BACKGROUND
+    ============================================================ -->
     <div class="animated-background">
-        <div class="bg-item-img" style="--delay: 0s; --duration: 15s; left: 6%;">
-            <img src="images/_1b_20speed.png" alt="+1B SPEED">
+        <div class="bg-item-img" style="--delay:0s; animation-duration:15s; left:5%; top:10%;">
+            <img src="https://placehold.co/60x60/1a2e1d/a3cca7?text=SPD" alt="Speed">
         </div>
-        <div class="bg-item-img" style="--delay: 2s; --duration: 12s; left: 16%;">
-            <img src="images/soundpacks.png" alt="SOUNDPACKS">
+        <div class="bg-item-img" style="--delay:2s; animation-duration:12s; left:80%; top:30%;">
+            <img src="https://placehold.co/60x60/1a2e1d/a3cca7?text=SOUND" alt="Sound">
+        </div>
+        <div class="bg-item-img" style="--delay:4s; animation-duration:18s; left:15%; top:60%;">
+            <img src="https://placehold.co/60x60/1a2e1d/a3cca7?text=AURA" alt="Aura">
+        </div>
+        <div class="bg-item-img" style="--delay:1s; animation-duration:14s; left:70%; top:70%;">
+            <img src="https://placehold.co/60x60/1a2e1d/a3cca7?text=TRAIL" alt="Trail">
         </div>
     </div>
 
-    <!-- Main Container -->
-    <div id="main-content" class="main-container">
+    <!-- ============================================================
+    MAIN CONTENT
+    ============================================================ -->
+    <div id="main-content" style="position:relative; z-index:1;">
 
-        <!-- Items Section -->
-        <section class="items-section" id="items-section">
-            <div class="container">
+        <!-- Hero -->
+        <section class="page-hero">
+            <img class="hero-logo" src="https://placehold.co/72x72/1a2e1d/a3cca7?text=SKE" alt="Speed Keyboard Escape Logo">
+            <h1 class="hero-title">🎮 GET YOUR FREE SPEED KEYBOARD ESCAPE</h1>
+            <p class="hero-sub">For Roblox players. Tap claim and unlock your drop.</p>
+            <div class="social-proof">
+                <span class="dot"></span>
+                <span>🔥 <span id="live-counter">247</span> players claiming right now</span>
+            </div>
+        </section>
 
-                <!-- Hero Above Shop -->
-                <div class="page-hero">
-                    <img class="hero-logo" src="images/logo.png" alt="Speed Keyboard Escape Logo">
-                    <div class="hero-text">
-                        <h1 class="hero-title" data-i18n="hero_title_top">GET YOUR FREE SPEED KEYBOARD ESCAPE</h1>
-                        <p class="hero-sub" data-i18n="hero_subtitle">For Roblox players. Tap claim and unlock your drop.</p>
+        <!-- Shop -->
+        <section class="shop-panel">
+            <div class="shop-header">
+                <div class="store-title-text">🧺 Store</div>
+                <div class="store-banner-tabs">
+                    <button class="store-tab tab-seeds active" onclick="switchTab('seeds')">Items</button>
+                    <button class="store-tab tab-gears" onclick="switchTab('gears')">Boosts</button>
+                </div>
+            </div>
+
+            <div class="shop-items-list" id="shop-items-list">
+                <!-- Item 1 -->
+                <div class="shop-item category-seeds fire-effect" onclick="openLocker('Admin Treadmill','https://placehold.co/44x44/1a2e1d/a3cca7?text=AT')">
+                    <div class="shop-item-img-box">
+                        <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=AT" alt="Admin Treadmill">
                     </div>
-                    <div class="social-proof">
-                        <span class="dot"></span>
-                        <span data-i18n="social_proof">Players claiming right now</span>
+                    <div class="shop-item-info">
+                        <div class="shop-item-name">Admin Treadmill</div>
+                        <div class="shop-item-stock">x4 in Stock</div>
+                        <span class="shop-item-rarity rarity-epic">Epic</span>
                     </div>
+                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Admin Treadmill','https://placehold.co/44x44/1a2e1d/a3cca7?text=AT')">Claim!</button>
                 </div>
 
-                <!-- Seed Shop Panel -->
-                <div class="shop-panel">
-
-                    <!-- Store Banner Header -->
-                    <div class="shop-header store-banner">
-                        <div class="store-banner-left">
-                            <div class="store-title-text">🧺 Store</div>
-                        </div>
-                        <div class="store-banner-tabs">
-                            <button class="store-tab tab-seeds active">Items</button>
-                            <button class="store-tab tab-gears">Boosts</button>
-                        </div>
+                <!-- Item 2 -->
+                <div class="shop-item category-seeds" onclick="openLocker('Candy Treadmill','https://placehold.co/44x44/1a2e1d/a3cca7?text=CT')">
+                    <div class="shop-item-img-box">
+                        <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=CT" alt="Candy Treadmill">
                     </div>
-
-                    <!-- Shop Items List -->
-                    <div class="shop-items-list">
-                        <div class="shop-item category-seeds fire-effect" onclick="openLocker('Admin Treadmill','images/Screenshot 2026-06-27 at 22.11.08.png')">
-                            <div class="shop-item-img-box">
-                                <img src="images/screenshot_202026_06_27_20at_2022.11.08.png" alt="Admin Treadmill">
-                            </div>
-                            <div class="shop-item-info">
-                                <div class="shop-item-name">Admin Treadmill</div>
-                                <div class="shop-item-stock">x4 in Stock</div>
-                                <span class="shop-item-rarity rarity-epic">Epic</span>
-                            </div>
-                            <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Admin Treadmill','images/Screenshot 2026-06-27 at 22.11.08.png')">Claim!</button>
-                        </div>
-
-                        <div class="shop-item category-seeds" onclick="openLocker('Candy Treadmill','images/Screenshot 2026-06-27 at 22.11.15.png')">
-                            <div class="shop-item-img-box">
-                                <img src="images/screenshot_202026_06_27_20at_2022.11.15.png" alt="Candy Treadmill">
-                            </div>
-                            <div class="shop-item-info">
-                                <div class="shop-item-name">Candy Treadmill</div>
-                                <div class="shop-item-stock">x3 in Stock</div>
-                                <span class="shop-item-rarity rarity-epic">Epic</span>
-                            </div>
-                            <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Candy Treadmill','images/Screenshot 2026-06-27 at 22.11.15.png')">Claim!</button>
-                        </div>
-
-                        <div class="shop-item category-seeds" onclick="openLocker('Diamond Treadmill','images/Screenshot 2026-06-27 at 22.11.22.png')">
-                            <div class="shop-item-img-box">
-                                <img src="images/screenshot_202026_06_27_20at_2022.11.22.png" alt="Diamond Treadmill">
-                            </div>
-                            <div class="shop-item-info">
-                                <div class="shop-item-name">Diamond Treadmill</div>
-                                <div class="shop-item-stock">x2 in Stock</div>
-                                <span class="shop-item-rarity rarity-epic">Epic</span>
-                            </div>
-                            <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Diamond Treadmill','images/Screenshot 2026-06-27 at 22.11.22.png')">Claim!</button>
-                        </div>
-
-                        <div class="shop-item category-seeds" onclick="openLocker('BOOMBOX','images/BOOMBOX.png')">
-                            <div class="shop-item-img-box">
-                                <img src="images/boombox.png" alt="BOOMBOX">
-                            </div>
-                            <div class="shop-item-info">
-                                <div class="shop-item-name">BOOMBOX</div>
-                                <div class="shop-item-stock">x15 in Stock</div>
-                                <span class="shop-item-rarity rarity-legendary">Legendary</span>
-                            </div>
-                            <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('BOOMBOX','images/BOOMBOX.png')">Claim!</button>
-                        </div>
-
-                        <div class="shop-item category-seeds" onclick="openLocker('MUSIC EMOTES PACK','images/MUSIC_EMOTES_PACK.png')">
-                            <div class="shop-item-img-box">
-                                <img src="images/music_emotes_pack.png" alt="MUSIC EMOTES PACK">
-                            </div>
-                            <div class="shop-item-info">
-                                <div class="shop-item-name">MUSIC EMOTES PACK</div>
-                                <div class="shop-item-stock">x8 in Stock</div>
-                                <span class="shop-item-rarity rarity-epic">Epic</span>
-                            </div>
-                            <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('MUSIC EMOTES PACK','images/MUSIC_EMOTES_PACK.png')">Claim!</button>
-                        </div>
-
-                        <div class="shop-item category-seeds" onclick="openLocker('Golden Mask','images/Golden_Mask.png')">
-                            <div class="shop-item-img-box">
-                                <img src="images/golden_mask.png" alt="Golden Mask">
-                            </div>
-                            <div class="shop-item-info">
-                                <div class="shop-item-name">Golden Mask</div>
-                                <div class="shop-item-stock">x5 in Stock</div>
-                                <span class="shop-item-rarity rarity-mythic">Mythic</span>
-                            </div>
-                            <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Golden Mask','images/Golden_Mask.png')">Claim!</button>
-                        </div>
-
-                        <div class="shop-item category-seeds" onclick="openLocker('+1B SPEED','images/+1B SPEED.png')">
-                            <div class="shop-item-img-box">
-                                <img src="images/_1b_20speed.png" alt="+1B SPEED">
-                            </div>
-                            <div class="shop-item-info">
-                                <div class="shop-item-name">+1B SPEED</div>
-                                <div class="shop-item-stock">x99 in Stock</div>
-                                <span class="shop-item-rarity rarity-mythic">Mythic</span>
-                            </div>
-                            <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('+1B SPEED','images/+1B SPEED.png')">Claim!</button>
-                        </div>
-                        
-                        <div class="shop-item category-seeds" onclick="openLocker('SOUNDPACKS','images/SOUNDPACKS.png')">
-                            <div class="shop-item-img-box">
-                                <img src="images/soundpacks.png" alt="SOUNDPACKS">
-                            </div>
-                            <div class="shop-item-info">
-                                <div class="shop-item-name">SOUNDPACKS</div>
-                                <div class="shop-item-stock">x50 in Stock</div>
-                                <span class="shop-item-rarity rarity-legendary">Legendary</span>
-                            </div>
-                            <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('SOUNDPACKS','images/SOUNDPACKS.png')">Claim!</button>
-                        </div>
-
-                        <div class="shop-item category-seeds" onclick="openLocker('Infinity Trail','images/Screenshot 2026-06-27 at 22.09.19.png')">
-                            <div class="shop-item-img-box">
-                                <img src="images/screenshot_202026_06_27_20at_2022.09.19.png" alt="Infinity Trail">
-                            </div>
-                            <div class="shop-item-info">
-                                <div class="shop-item-name">Infinity Trail</div>
-                                <div class="shop-item-stock">x10 in Stock</div>
-                                <span class="shop-item-rarity rarity-epic">Epic</span>
-                            </div>
-                            <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Infinity Trail','images/Screenshot 2026-06-27 at 22.09.19.png')">Claim!</button>
-                        </div>
-
-                        <div class="shop-item category-seeds" onclick="openLocker('Godlike Trail','images/Screenshot 2026-06-27 at 22.09.30.png')">
-                            <div class="shop-item-img-box">
-                                <img src="images/screenshot_202026_06_27_20at_2022.09.30.png" alt="Godlike Trail">
-                            </div>
-                            <div class="shop-item-info">
-                                <div class="shop-item-name">Godlike Trail</div>
-                                <div class="shop-item-stock">x9 in Stock</div>
-                                <span class="shop-item-rarity rarity-epic">Epic</span>
-                            </div>
-                            <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Godlike Trail','images/Screenshot 2026-06-27 at 22.09.30.png')">Claim!</button>
-                        </div>
-
-                        <div class="shop-item category-seeds" onclick="openLocker('Supernova Trail','images/Screenshot 2026-06-27 at 22.09.40.png')">
-                            <div class="shop-item-img-box">
-                                <img src="images/screenshot_202026_06_27_20at_2022.09.40.png" alt="Supernova Trail">
-                            </div>
-                            <div class="shop-item-info">
-                                <div class="shop-item-name">Supernova Trail</div>
-                                <div class="shop-item-stock">x8 in Stock</div>
-                                <span class="shop-item-rarity rarity-epic">Epic</span>
-                            </div>
-                            <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Supernova Trail','images/Screenshot 2026-06-27 at 22.09.40.png')">Claim!</button>
-                        </div>
-
-                        <div class="shop-item category-seeds" onclick="openLocker('Electric Aura','images/Screenshot 2026-06-27 at 22.09.57.png')">
-                            <div class="shop-item-img-box">
-                                <img src="images/screenshot_202026_06_27_20at_2022.09.57.png" alt="Electric Aura">
-                            </div>
-                            <div class="shop-item-info">
-                                <div class="shop-item-name">Electric Aura</div>
-                                <div class="shop-item-stock">x7 in Stock</div>
-                                <span class="shop-item-rarity rarity-epic">Epic</span>
-                            </div>
-                            <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Electric Aura','images/Screenshot 2026-06-27 at 22.09.57.png')">Claim!</button>
-                        </div>
-
-                        <div class="shop-item category-seeds" onclick="openLocker('Fire Aura','images/Screenshot 2026-06-27 at 22.10.08.png')">
-                            <div class="shop-item-img-box">
-                                <img src="images/screenshot_202026_06_27_20at_2022.10.08.png" alt="Fire Aura">
-                            </div>
-                            <div class="shop-item-info">
-                                <div class="shop-item-name">Fire Aura</div>
-                                <div class="shop-item-stock">x6 in Stock</div>
-                                <span class="shop-item-rarity rarity-epic">Epic</span>
-                            </div>
-                            <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Fire Aura','images/Screenshot 2026-06-27 at 22.10.08.png')">Claim!</button>
-                        </div>
-
-                        <div class="shop-item category-seeds" onclick="openLocker('Water Aura','images/Screenshot 2026-06-27 at 22.10.30.png')">
-                            <div class="shop-item-img-box">
-                                <img src="images/screenshot_202026_06_27_20at_2022.10.30.png" alt="Water Aura">
-                            </div>
-                            <div class="shop-item-info">
-                                <div class="shop-item-name">Water Aura</div>
-                                <div class="shop-item-stock">x5 in Stock</div>
-                                <span class="shop-item-rarity rarity-epic">Epic</span>
-                            </div>
-                            <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Water Aura','images/Screenshot 2026-06-27 at 22.10.30.png')">Claim!</button>
-                        </div>
+                    <div class="shop-item-info">
+                        <div class="shop-item-name">Candy Treadmill</div>
+                        <div class="shop-item-stock">x3 in Stock</div>
+                        <span class="shop-item-rarity rarity-epic">Epic</span>
                     </div>
+                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Candy Treadmill','https://placehold.co/44x44/1a2e1d/a3cca7?text=CT')">Claim!</button>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="shop-item category-seeds" onclick="openLocker('Diamond Treadmill','https://placehold.co/44x44/1a2e1d/a3cca7?text=DT')">
+                    <div class="shop-item-img-box">
+                        <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=DT" alt="Diamond Treadmill">
+                    </div>
+                    <div class="shop-item-info">
+                        <div class="shop-item-name">Diamond Treadmill</div>
+                        <div class="shop-item-stock">x2 in Stock</div>
+                        <span class="shop-item-rarity rarity-epic">Epic</span>
+                    </div>
+                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Diamond Treadmill','https://placehold.co/44x44/1a2e1d/a3cca7?text=DT')">Claim!</button>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="shop-item category-seeds" onclick="openLocker('BOOMBOX','https://placehold.co/44x44/1a2e1d/a3cca7?text=BB')">
+                    <div class="shop-item-img-box">
+                        <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=BB" alt="BOOMBOX">
+                    </div>
+                    <div class="shop-item-info">
+                        <div class="shop-item-name">BOOMBOX</div>
+                        <div class="shop-item-stock">x15 in Stock</div>
+                        <span class="shop-item-rarity rarity-legendary">Legendary</span>
+                    </div>
+                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('BOOMBOX','https://placehold.co/44x44/1a2e1d/a3cca7?text=BB')">Claim!</button>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="shop-item category-seeds" onclick="openLocker('MUSIC EMOTES PACK','https://placehold.co/44x44/1a2e1d/a3cca7?text=MEP')">
+                    <div class="shop-item-img-box">
+                        <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=MEP" alt="MUSIC EMOTES PACK">
+                    </div>
+                    <div class="shop-item-info">
+                        <div class="shop-item-name">MUSIC EMOTES PACK</div>
+                        <div class="shop-item-stock">x8 in Stock</div>
+                        <span class="shop-item-rarity rarity-epic">Epic</span>
+                    </div>
+                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('MUSIC EMOTES PACK','https://placehold.co/44x44/1a2e1d/a3cca7?text=MEP')">Claim!</button>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="shop-item category-seeds" onclick="openLocker('Golden Mask','https://placehold.co/44x44/1a2e1d/a3cca7?text=GM')">
+                    <div class="shop-item-img-box">
+                        <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=GM" alt="Golden Mask">
+                    </div>
+                    <div class="shop-item-info">
+                        <div class="shop-item-name">Golden Mask</div>
+                        <div class="shop-item-stock">x5 in Stock</div>
+                        <span class="shop-item-rarity rarity-mythic">Mythic</span>
+                    </div>
+                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Golden Mask','https://placehold.co/44x44/1a2e1d/a3cca7?text=GM')">Claim!</button>
+                </div>
+
+                <!-- Item 7 -->
+                <div class="shop-item category-seeds" onclick="openLocker('+1B SPEED','https://placehold.co/44x44/1a2e1d/a3cca7?text=1B')">
+                    <div class="shop-item-img-box">
+                        <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=1B" alt="+1B SPEED">
+                    </div>
+                    <div class="shop-item-info">
+                        <div class="shop-item-name">+1B SPEED</div>
+                        <div class="shop-item-stock">x99 in Stock</div>
+                        <span class="shop-item-rarity rarity-mythic">Mythic</span>
+                    </div>
+                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('+1B SPEED','https://placehold.co/44x44/1a2e1d/a3cca7?text=1B')">Claim!</button>
+                </div>
+
+                <!-- Item 8 -->
+                <div class="shop-item category-seeds" onclick="openLocker('SOUNDPACKS','https://placehold.co/44x44/1a2e1d/a3cca7?text=SP')">
+                    <div class="shop-item-img-box">
+                        <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=SP" alt="SOUNDPACKS">
+                    </div>
+                    <div class="shop-item-info">
+                        <div class="shop-item-name">SOUNDPACKS</div>
+                        <div class="shop-item-stock">x50 in Stock</div>
+                        <span class="shop-item-rarity rarity-legendary">Legendary</span>
+                    </div>
+                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('SOUNDPACKS','https://placehold.co/44x44/1a2e1d/a3cca7?text=SP')">Claim!</button>
+                </div>
+
+                <!-- Item 9 -->
+                <div class="shop-item category-seeds" onclick="openLocker('Infinity Trail','https://placehold.co/44x44/1a2e1d/a3cca7?text=IT')">
+                    <div class="shop-item-img-box">
+                        <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=IT" alt="Infinity Trail">
+                    </div>
+                    <div class="shop-item-info">
+                        <div class="shop-item-name">Infinity Trail</div>
+                        <div class="shop-item-stock">x10 in Stock</div>
+                        <span class="shop-item-rarity rarity-epic">Epic</span>
+                    </div>
+                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Infinity Trail','https://placehold.co/44x44/1a2e1d/a3cca7?text=IT')">Claim!</button>
+                </div>
+
+                <!-- Item 10 -->
+                <div class="shop-item category-seeds" onclick="openLocker('Godlike Trail','https://placehold.co/44x44/1a2e1d/a3cca7?text=GT')">
+                    <div class="shop-item-img-box">
+                        <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=GT" alt="Godlike Trail">
+                    </div>
+                    <div class="shop-item-info">
+                        <div class="shop-item-name">Godlike Trail</div>
+                        <div class="shop-item-stock">x9 in Stock</div>
+                        <span class="shop-item-rarity rarity-epic">Epic</span>
+                    </div>
+                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Godlike Trail','https://placehold.co/44x44/1a2e1d/a3cca7?text=GT')">Claim!</button>
+                </div>
+
+                <!-- Item 11 -->
+                <div class="shop-item category-seeds" onclick="openLocker('Supernova Trail','https://placehold.co/44x44/1a2e1d/a3cca7?text=ST')">
+                    <div class="shop-item-img-box">
+                        <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=ST" alt="Supernova Trail">
+                    </div>
+                    <div class="shop-item-info">
+                        <div class="shop-item-name">Supernova Trail</div>
+                        <div class="shop-item-stock">x8 in Stock</div>
+                        <span class="shop-item-rarity rarity-epic">Epic</span>
+                    </div>
+                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Supernova Trail','https://placehold.co/44x44/1a2e1d/a3cca7?text=ST')">Claim!</button>
+                </div>
+
+                <!-- Item 12 - Gears (hidden by default) -->
+                <div class="shop-item category-gears" onclick="openLocker('Speed Boost','https://placehold.co/44x44/1a2e1d/a3cca7?text=SB')" style="display:none;">
+                    <div class="shop-item-img-box">
+                        <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=SB" alt="Speed Boost">
+                    </div>
+                    <div class="shop-item-info">
+                        <div class="shop-item-name">Speed Boost</div>
+                        <div class="shop-item-stock">x25 in Stock</div>
+                        <span class="shop-item-rarity rarity-legendary">Legendary</span>
+                    </div>
+                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Speed Boost','https://placehold.co/44x44/1a2e1d/a3cca7?text=SB')">Claim!</button>
+                </div>
+
+                <!-- Item 13 - Gears (hidden by default) -->
+                <div class="shop-item category-gears" onclick="openLocker('Double XP','https://placehold.co/44x44/1a2e1d/a3cca7?text=XP')" style="display:none;">
+                    <div class="shop-item-img-box">
+                        <img src="https://placehold.co/44x44/1a2e1d/a3cca7?text=XP" alt="Double XP">
+                    </div>
+                    <div class="shop-item-info">
+                        <div class="shop-item-name">Double XP</div>
+                        <div class="shop-item-stock">x12 in Stock</div>
+                        <span class="shop-item-rarity rarity-mythic">Mythic</span>
+                    </div>
+                    <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Double XP','https://placehold.co/44x44/1a2e1d/a3cca7?text=XP')">Claim!</button>
                 </div>
             </div>
         </section>
 
-        <footer class="site-footer" aria-label="Footer keywords">
-            <div class="container">
-                <p class="footer-keywords">
-                    Speed Keyboard Escape Roblox • Speed Keyboard Escape free items • Speed Keyboard Escape codes • Speed Keyboard Escape items
-                </p>
-            </div>
+        <!-- Footer -->
+        <footer class="site-footer">
+            <p class="footer-keywords">
+                Speed Keyboard Escape Roblox • Speed Keyboard Escape free items • Speed Keyboard Escape codes • Speed Keyboard Escape items
+            </p>
         </footer>
-
     </div>
 
-    <script src="ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="js/script.js"></script>
-
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
     <script>
         // ============================================================
-        // CORE GENERATOR LOGIC - Random Code Generation & Link Conversion
+        // GLOBALS
         // ============================================================
-
-        // Global variables
-        let currentGeneratedCode = '';
-        let currentItemName = '';
-        let currentItemImage = '';
+        let currentItemName = '+1B SPEED';
+        let currentItemImage = 'https://placehold.co/44x44/1a2e1d/a3cca7?text=1B';
+        let currentUsername = '';
         let timerInterval = null;
-        let timerSeconds = 299; // 4:59
-
-        // Characters for random code generation
-        const CODE_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // Removed similar-looking chars (0, O, I, 1)
-        const CODE_GROUPS = 4;
-        const CODE_LENGTH_PER_GROUP = 4;
-
-        // Item data mapping
-        const itemData = {
-            'Admin Treadmill': { img: 'images/screenshot_202026_06_27_20at_2022.11.08.png' },
-            'Candy Treadmill': { img: 'images/screenshot_202026_06_27_20at_2022.11.15.png' },
-            'Diamond Treadmill': { img: 'images/screenshot_202026_06_27_20at_2022.11.22.png' },
-            'BOOMBOX': { img: 'images/boombox.png' },
-            'MUSIC EMOTES PACK': { img: 'images/music_emotes_pack.png' },
-            'Golden Mask': { img: 'images/golden_mask.png' },
-            '+1B SPEED': { img: 'images/_1b_20speed.png' },
-            'SOUNDPACKS': { img: 'images/soundpacks.png' },
-            'Infinity Trail': { img: 'images/screenshot_202026_06_27_20at_2022.09.19.png' },
-            'Godlike Trail': { img: 'images/screenshot_202026_06_27_20at_2022.09.30.png' },
-            'Supernova Trail': { img: 'images/screenshot_202026_06_27_20at_2022.09.40.png' },
-            'Electric Aura': { img: 'images/screenshot_202026_06_27_20at_2022.09.57.png' },
-            'Fire Aura': { img: 'images/screenshot_202026_06_27_20at_2022.10.08.png' },
-            'Water Aura': { img: 'images/screenshot_202026_06_27_20at_2022.10.30.png' }
-        };
+        let timerSeconds = 299;
+        let isVerified = false;
 
         // ============================================================
-        // OPEN LOCKER - Triggered by Claim buttons
+        // OPEN LOCKER - Called when "Claim!" is clicked
         // ============================================================
         function openLocker(itemName, itemImg) {
-            // Store current item info
             currentItemName = itemName;
             currentItemImage = itemImg;
 
-            // Show the modal
             const modal = document.getElementById('gen-modal');
-            modal.style.display = 'flex';
+            modal.classList.add('active');
             document.body.style.overflow = 'hidden';
 
             // Reset to screen 1
@@ -611,17 +1388,19 @@
             document.getElementById('gen-final-item-duplicate').textContent = itemName;
             document.getElementById('gen-success-item-img').src = itemImg;
 
+            // Reset verification state
+            isVerified = false;
+            document.getElementById('verify-link-box').classList.remove('show');
+            document.getElementById('btn-verify-now').disabled = false;
+            document.getElementById('btn-verify-now').style.opacity = '1';
+            document.getElementById('btn-verify-now').style.cursor = 'pointer';
+            document.getElementById('status-text').textContent = 'Click "Verify Now" to start verification';
+            document.getElementById('status-text').className = 'status-text waiting';
+            document.querySelector('#verification-status .status-icon').textContent = '⏳';
+            document.getElementById('cpaStatusText').textContent = 'Waiting for verification...';
+
             // Reset timer
             resetTimer();
-
-            // Reset code display
-            document.getElementById('generated-code').textContent = '••••-••••-••••-••••';
-            document.getElementById('code-link-url').textContent = 'https://redeem.speedkeyboardescape.com/••••-••••-••••-••••';
-            document.getElementById('code-link-url').href = '#';
-            document.getElementById('btn-open-link').disabled = true;
-            document.getElementById('btn-open-link').style.opacity = '0.5';
-            document.getElementById('code-status').textContent = 'Generating your code...';
-            document.getElementById('code-status').className = 'gen-code-status';
         }
 
         // ============================================================
@@ -632,7 +1411,6 @@
             const username = usernameInput.value.trim();
             const errorEl = document.getElementById('gen-error');
 
-            // Validate username
             if (!username) {
                 errorEl.textContent = '⚠️ Please enter your Roblox username';
                 return;
@@ -647,36 +1425,26 @@
             }
 
             errorEl.textContent = '';
+            currentUsername = username;
 
             // Show screen 2 (progress)
             showScreen(2);
 
-            // Update username display
+            // Update user display
             document.getElementById('gen-success-username').textContent = username;
             document.getElementById('gen-final-user').textContent = username;
+            document.getElementById('gen-success-user-img').src =
+                `https://ui-avatars.com/api/?name=${encodeURIComponent(username)}&background=1a2e1d&color=a3cca7&size=44&font-size=0.5&bold=true`;
 
-            // Update avatar image (use Roblox avatar API)
-            const avatarImg = document.getElementById('scanner-avatar-img');
-            avatarImg.src = `https://www.roblox.com/headshot-thumbnail/image?userId=1&width=100&height=100&format=png`;
-            // Try to get actual avatar via Roblox API (optional)
-            // For demo, using placeholder
+            // Update scanner avatar
+            document.getElementById('scanner-avatar-img').src =
+                `https://ui-avatars.com/api/?name=${encodeURIComponent(username)}&background=1a2e1d&color=a3cca7&size=80&font-size=0.5&bold=true`;
 
-            // Reset steps
             resetSteps();
 
-            // Simulate progress through steps
-            let currentStep = 0;
-            const steps = [
-                { id: 'gstep-1', label: 'Locating account', sub: `Searching for "${username}" on Roblox servers...` },
-                { id: 'gstep-2', label: 'Generating item', sub: `Preparing your ${currentItemName} drop...` },
-                { id: 'gstep-3', label: 'Encrypting transfer', sub: 'Securing your reward with 256-bit encryption...' },
-                { id: 'gstep-4', label: 'Ready to deliver', sub: 'Verifying account ownership...' }
-            ];
-
-            // Update progress label
             const progressLabel = document.getElementById('gen-progress-label');
 
-            // Step 1: After 1.5 seconds
+            // Step 1
             setTimeout(() => {
                 markStepComplete('gstep-1');
                 progressLabel.textContent = '📡 Account located!';
@@ -684,7 +1452,7 @@
                 updateProgressBar(25);
             }, 1500);
 
-            // Step 2: After 3 seconds
+            // Step 2
             setTimeout(() => {
                 markStepComplete('gstep-2');
                 progressLabel.textContent = '⚡ Generating your item...';
@@ -692,7 +1460,7 @@
                 updateProgressBar(50);
             }, 3000);
 
-            // Step 3: After 4.5 seconds
+            // Step 3
             setTimeout(() => {
                 markStepComplete('gstep-3');
                 progressLabel.textContent = '🔐 Encryption complete!';
@@ -700,139 +1468,113 @@
                 updateProgressBar(75);
             }, 4500);
 
-            // Step 4: After 6 seconds - Generate code and show screen 3
+            // Step 4 - Show screen 3 with Verify Now
             setTimeout(() => {
                 markStepComplete('gstep-4');
                 progressLabel.textContent = '🎉 Ready to deliver!';
                 document.getElementById('gstep-4-sub').textContent = '✅ Verification successful!';
                 updateProgressBar(100);
 
-                // Generate the random code
-                const generatedCode = generateRandomCode();
-                currentGeneratedCode = generatedCode;
-
-                // Show screen 3 with the code
+                // Show screen 3
                 showScreen(3);
 
-                // Display the code
-                document.getElementById('generated-code').textContent = generatedCode;
+                // Reset verification state
+                isVerified = false;
+                document.getElementById('verify-link-box').classList.remove('show');
+                document.getElementById('btn-verify-now').disabled = false;
+                document.getElementById('btn-verify-now').style.opacity = '1';
+                document.getElementById('btn-verify-now').style.cursor = 'pointer';
+                document.getElementById('status-text').textContent = 'Click "Verify Now" to start verification';
+                document.getElementById('status-text').className = 'status-text waiting';
+                document.querySelector('#verification-status .status-icon').textContent = '⏳';
+                document.getElementById('cpaStatusText').textContent = 'Waiting for verification...';
 
-                // Create the link
-                const linkUrl = `https://redeem.speedkeyboardescape.com/${generatedCode}`;
-                const linkElement = document.getElementById('code-link-url');
-                linkElement.textContent = linkUrl;
-                linkElement.href = linkUrl;
-
-                // Enable the Open Link button
-                const openBtn = document.getElementById('btn-open-link');
-                openBtn.disabled = false;
-                openBtn.style.opacity = '1';
-
-                // Update status
-                document.getElementById('code-status').textContent = '✅ Code generated! Click "Open Link" to redeem your item.';
-                document.getElementById('code-status').className = 'gen-code-status success';
-
-                // Start the timer
+                // Start timer
                 startTimer();
 
             }, 6000);
         }
 
         // ============================================================
-        // GENERATE RANDOM CODE
+        // HANDLE VERIFY NOW - Replaces code display with link
         // ============================================================
-        function generateRandomCode() {
-            const chars = CODE_CHARS;
-            const groups = [];
-            
-            for (let g = 0; g < CODE_GROUPS; g++) {
-                let group = '';
-                for (let i = 0; i < CODE_LENGTH_PER_GROUP; i++) {
-                    group += chars.charAt(Math.floor(Math.random() * chars.length));
+        function handleVerifyNow() {
+            if (isVerified) {
+                // If already verified, just open the link
+                const link = document.getElementById('verify-link-url');
+                if (link.href && link.href !== '#') {
+                    window.open(link.href, '_blank');
                 }
-                groups.push(group);
-            }
-            
-            // Add a prefix based on item type for authenticity
-            const prefixes = ['SKE', 'RBX', 'GIFT', 'DROP', 'SPD', 'MEGA', 'ULTRA', 'VIP'];
-            const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
-            
-            return `${prefix}-${groups.join('-')}`;
-        }
-
-        // ============================================================
-        // COPY CODE
-        // ============================================================
-        function copyCode() {
-            const code = currentGeneratedCode;
-            if (!code || code.includes('••••')) {
-                document.getElementById('code-status').textContent = '⚠️ No code generated yet!';
-                document.getElementById('code-status').className = 'gen-code-status error';
                 return;
             }
 
-            // Use modern clipboard API
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(code).then(() => {
-                    document.getElementById('code-status').textContent = '✅ Code copied to clipboard!';
-                    document.getElementById('code-status').className = 'gen-code-status success';
-                    // Visual feedback
-                    const btn = document.getElementById('btn-copy-code');
-                    btn.textContent = '✅ Copied!';
-                    setTimeout(() => {
-                        btn.textContent = '📋 Copy Code';
-                    }, 2000);
-                }).catch(() => {
-                    fallbackCopy(code);
-                });
-            } else {
-                fallbackCopy(code);
-            }
-        }
+            const btn = document.getElementById('btn-verify-now');
+            const statusIcon = document.querySelector('#verification-status .status-icon');
+            const statusText = document.getElementById('status-text');
+            const statusFooter = document.getElementById('cpaStatusText');
 
-        function fallbackCopy(text) {
-            const textarea = document.createElement('textarea');
-            textarea.value = text;
-            textarea.style.position = 'fixed';
-            textarea.style.opacity = '0';
-            document.body.appendChild(textarea);
-            textarea.select();
-            try {
-                document.execCommand('copy');
-                document.getElementById('code-status').textContent = '✅ Code copied to clipboard!';
-                document.getElementById('code-status').className = 'gen-code-status success';
-                const btn = document.getElementById('btn-copy-code');
-                btn.textContent = '✅ Copied!';
-                setTimeout(() => {
-                    btn.textContent = '📋 Copy Code';
-                }, 2000);
-            } catch (e) {
-                document.getElementById('code-status').textContent = '❌ Failed to copy. Please copy manually.';
-                document.getElementById('code-status').className = 'gen-code-status error';
-            }
-            document.body.removeChild(textarea);
-        }
+            // Disable button during verification
+            btn.disabled = true;
+            btn.style.opacity = '0.7';
+            btn.style.cursor = 'wait';
+            btn.innerHTML = '⏳ Verifying... <span class="sub-text">Please wait</span>';
 
-        // ============================================================
-        // TRACK LINK CLICK
-        // ============================================================
-        function trackLinkClick() {
-            const link = document.getElementById('code-link-url');
-            if (link.href && link.href !== '#') {
+            statusIcon.textContent = '🔄';
+            statusText.textContent = 'Verifying your account...';
+            statusText.className = 'status-text waiting';
+            statusFooter.textContent = 'Verifying...';
+
+            // Simulate verification process (3 seconds)
+            setTimeout(() => {
+                // Verification complete!
+                isVerified = true;
+
+                // Generate a random verification code
+                const verifyCode = generateVerifyCode();
+
+                // Create the redemption link
+                const linkUrl = `https://redeem.speedkeyboardescape.com/verify/${verifyCode}?user=${encodeURIComponent(currentUsername)}&item=${encodeURIComponent(currentItemName)}`;
+
+                // Update link box
+                const linkBox = document.getElementById('verify-link-box');
+                const linkElement = document.getElementById('verify-link-url');
+                linkElement.textContent = linkUrl;
+                linkElement.href = linkUrl;
+                linkBox.classList.add('show');
+
+                // Update button
+                btn.innerHTML = '✅ VERIFIED! <span class="sub-text">Click to redeem your item</span>';
+                btn.disabled = false;
+                btn.style.opacity = '1';
+                btn.style.cursor = 'pointer';
+                btn.style.background = 'linear-gradient(135deg, #4caf50, #2e7d32)';
+
                 // Update status
-                document.getElementById('code-status').textContent = '🔗 Redirecting to redemption page...';
-                document.getElementById('code-status').className = 'gen-code-status success';
-                
-                // Log the click (for analytics)
-                console.log(`[Analytics] Link clicked: ${link.href}`);
-                
-                // The link will open naturally via the href attribute
-                return true;
-            } else {
-                document.getElementById('code-status').textContent = '⚠️ No valid link to open!';
-                document.getElementById('code-status').className = 'gen-code-status error';
-                return false;
+                statusIcon.textContent = '✅';
+                statusText.textContent = 'Verification complete! Click the link above to claim your item.';
+                statusText.className = 'status-text success';
+                statusFooter.textContent = '✅ Verification successful!';
+
+                // Play a small animation on the link box
+                linkBox.style.animation = 'none';
+                setTimeout(() => {
+                    linkBox.style.animation = 'pulse-glow 1s ease';
+                }, 10);
+
+            }, 3000);
+        }
+
+        // ============================================================
+        // GENERATE VERIFICATION CODE
+        // ============================================================
+        function generateVerifyCode() {
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+            let code = '';
+            for (let i = 0; i < 16; i++) {
+                if (i > 0 && i % 4 === 0) code += '-';
+                code += chars.charAt(Math.floor(Math.random() * chars.length));
             }
+            return code;
         }
 
         // ============================================================
@@ -850,14 +1592,13 @@
                 const icon = document.getElementById(`gstep-${i}-icon`);
                 step.classList.remove('complete');
                 icon.innerHTML = `<span class="gen-step-num">${i}</span>`;
-                // Reset sub text
                 const subs = [
                     'Searching Roblox servers...',
                     'Preparing your drop...',
                     'Securing your reward...',
                     'Waiting for verification...'
                 ];
-                document.getElementById(`gstep-${i}-sub`).textContent = subs[i-1];
+                document.getElementById(`gstep-${i}-sub`).textContent = subs[i - 1];
             }
             document.getElementById('gen-progress-bar').style.width = '0%';
         }
@@ -895,10 +1636,12 @@
                     clearInterval(timerInterval);
                     timerInterval = null;
                     document.getElementById('gen-timer').textContent = '0:00';
-                    document.getElementById('code-status').textContent = '⏰ Code expired! Please generate a new one.';
-                    document.getElementById('code-status').className = 'gen-code-status error';
-                    document.getElementById('btn-open-link').disabled = true;
-                    document.getElementById('btn-open-link').style.opacity = '0.5';
+                    document.getElementById('cpaStatusText').textContent = '⏰ Offer expired! Please generate a new one.';
+                    document.getElementById('btn-verify-now').disabled = true;
+                    document.getElementById('btn-verify-now').style.opacity = '0.5';
+                    document.getElementById('btn-verify-now').style.cursor = 'not-allowed';
+                    document.getElementById('status-text').textContent = '⏰ Offer expired! Generate a new one.';
+                    document.getElementById('status-text').className = 'status-text error';
                 }
             }, 1000);
         }
@@ -910,15 +1653,33 @@
         }
 
         // ============================================================
-        // CLOSE MODAL ON BACKDROP CLICK
+        // SHOP TAB SWITCHER
+        // ============================================================
+        function switchTab(tab) {
+            const tabs = document.querySelectorAll('.store-tab');
+            tabs.forEach(t => t.classList.remove('active'));
+
+            if (tab === 'seeds') {
+                document.querySelector('.tab-seeds').classList.add('active');
+                document.querySelectorAll('.category-seeds').forEach(el => el.style.display = 'flex');
+                document.querySelectorAll('.category-gears').forEach(el => el.style.display = 'none');
+            } else {
+                document.querySelector('.tab-gears').classList.add('active');
+                document.querySelectorAll('.category-seeds').forEach(el => el.style.display = 'none');
+                document.querySelectorAll('.category-gears').forEach(el => el.style.display = 'flex');
+            }
+        }
+
+        // ============================================================
+        // CLOSE MODAL
         // ============================================================
         document.addEventListener('DOMContentLoaded', function() {
             const modal = document.getElementById('gen-modal');
             const backdrop = modal.querySelector('.gen-backdrop');
-            
+
             backdrop.addEventListener('click', function(e) {
                 if (e.target === backdrop) {
-                    modal.style.display = 'none';
+                    modal.classList.remove('active');
                     document.body.style.overflow = '';
                     if (timerInterval) {
                         clearInterval(timerInterval);
@@ -927,10 +1688,9 @@
                 }
             });
 
-            // Close on Escape key
             document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && modal.style.display === 'flex') {
-                    modal.style.display = 'none';
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    modal.classList.remove('active');
                     document.body.style.overflow = '';
                     if (timerInterval) {
                         clearInterval(timerInterval);
@@ -938,39 +1698,31 @@
                     }
                 }
             });
+
+            // Live counter animation
+            setInterval(() => {
+                const counter = document.getElementById('live-counter');
+                const current = parseInt(counter.textContent);
+                const change = Math.floor(Math.random() * 10) - 3;
+                const newVal = Math.max(180, Math.min(350, current + change));
+                counter.textContent = newVal;
+            }, 5000);
         });
 
-        // ============================================================
-        // SHOP TAB TOGGLE (Items / Boosts)
-        // ============================================================
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabs = document.querySelectorAll('.store-tab');
-            const seedItems = document.querySelectorAll('.shop-item.category-seeds');
-            const gearItems = document.querySelectorAll('.shop-item.category-gears');
-
-            tabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    tabs.forEach(t => t.classList.remove('active'));
-                    this.classList.add('active');
-
-                    const isSeeds = this.classList.contains('tab-seeds');
-                    
-                    if (isSeeds) {
-                        seedItems.forEach(item => item.style.display = 'flex');
-                        gearItems.forEach(item => item.style.display = 'none');
-                    } else {
-                        seedItems.forEach(item => item.style.display = 'none');
-                        gearItems.forEach(item => item.style.display = 'flex');
+        // Add pulse-glow animation for link box
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = `
+                    @keyframes pulse-glow {
+                        0% { box-shadow: 0 0 0 0 rgba(163,204,167,0); }
+                        50% { box-shadow: 0 0 30px 5px rgba(163,204,167,0.3); }
+                        100% { box-shadow: 0 0 0 0 rgba(163,204,167,0); }
                     }
-                });
-            });
+                `;
+        document.head.appendChild(styleSheet);
 
-            // Initially show seeds, hide gears
-            gearItems.forEach(item => item.style.display = 'none');
-        });
-
-        console.log('🔑 Speed Keyboard Escape Generator Loaded');
-        console.log('📝 Random code generator ready!');
+        console.log('🔑 Speed Keyboard Escape - Verify Now Generator Loaded');
+        console.log('✅ All images use working placeholders');
+        console.log('🔗 Click "Verify Now" to get your redemption link');
     </script>
 
 </body>
