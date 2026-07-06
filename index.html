@@ -1,6 +1,7 @@
-<html lang="en" dir="ltr"><head>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
     <meta name="google-site-verification" content="I7HPI72QCCW_kC_cY1dZebObTCwFYpx0zDeJBGvgUp4">
-    <!-- font -->
     <meta name="google-site-verification" content="0WXdQoFlApsqgHjlU9aXwochl5JFIdy0Fj69MEY5tGk">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,13 +20,131 @@
     <meta name="twitter:url" content="https://rivals-codes.com/">
     <meta name="robots" content="index,follow">
 
-    <!-- Fonts -->
     <link href="fonts.googleapis.com/css2" rel="stylesheet">
     <link href="css/all.min.css" rel="stylesheet">
-
-    <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
 
+    <style>
+        /* Additional styles for code display */
+        .gen-code-display {
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid #a3cca7;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .gen-code-display::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(163, 204, 167, 0.1), transparent, rgba(163, 204, 167, 0.1), transparent);
+            animation: spin 4s linear infinite;
+        }
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+        .gen-code-text {
+            font-family: 'Courier New', monospace;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #a3cca7;
+            letter-spacing: 4px;
+            position: relative;
+            z-index: 1;
+            word-break: break-all;
+            text-shadow: 0 0 20px rgba(163, 204, 167, 0.3);
+        }
+        .gen-code-label {
+            font-size: 0.8rem;
+            color: #8899aa;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+        .gen-code-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        .gen-code-actions button,
+        .gen-code-actions a {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+        .btn-copy-code {
+            background: #2a3d2d;
+            color: #a3cca7;
+            border: 1px solid #a3cca7;
+        }
+        .btn-copy-code:hover {
+            background: #a3cca7;
+            color: #1a2a1d;
+        }
+        .btn-open-link {
+            background: #a3cca7;
+            color: #1a2a1d;
+        }
+        .btn-open-link:hover {
+            background: #8ab88e;
+            transform: scale(1.05);
+        }
+        .btn-open-link:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .gen-code-status {
+            font-size: 0.8rem;
+            color: #8899aa;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        .gen-code-status.success {
+            color: #a3cca7;
+        }
+        .gen-code-status.error {
+            color: #ff6b6b;
+        }
+        .gen-code-link-preview {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            color: #8899aa;
+            word-break: break-all;
+            margin-top: 8px;
+            position: relative;
+            z-index: 1;
+            border: 1px dashed rgba(163, 204, 167, 0.2);
+        }
+        .gen-code-link-preview a {
+            color: #a3cca7;
+            text-decoration: none;
+        }
+        .gen-code-link-preview a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body class="is-ready">
@@ -43,7 +162,8 @@
             <option value="fil">Filipino</option>
         </select>
     </div>
-<!-- iOS Redirect Popup -->
+
+    <!-- iOS Redirect Popup -->
     <div id="ios-popup" class="ios-popup" style="display:none">
         <div class="ios-popup-background"></div>
         <div class="ios-popup-content">
@@ -57,8 +177,6 @@
         </div>
     </div>
 
-
-
     <!-- Fake Generator Modal -->
     <div id="gen-modal" class="gen-modal" role="dialog" aria-modal="true" aria-labelledby="gen-modal-title">
         <div class="gen-backdrop"></div>
@@ -70,7 +188,6 @@
                     <img src="images/logo.png" alt="Speed Keyboard Escape" class="gen-logo-img">
                     <div>
                         <div class="gen-label" data-i18n="gen_header_title">Speed a Free Drop</div>
-
                     </div>
                 </div>
             </div>
@@ -143,7 +260,7 @@
                 </div>
             </div>
 
-            <!-- SCREEN 3: Claim -->
+            <!-- SCREEN 3: Code Display (Replaces offers) -->
             <div id="gen-screen-3" class="gen-screen">
                 <!-- Premium Transfer Visual -->
                 <div class="gen-transfer-panel">
@@ -171,23 +288,30 @@
                     </div>
                 </div>
 
-                <p class="gen-success-sub" style="text-align: center; color: #a3cca7; margin-bottom: 15px;" data-i18n-html="gen_success_sub">Your <strong id="gen-final-item-duplicate" style="display:none;"></strong> is ready for <strong id="gen-final-user"></strong>. Please complete one of the tasks below to claim it.</p>
-                
-                <div id="offersLoading" class="offers-loading">
-                    <div class="spinner"></div>
-                    <p data-i18n="gen_offers_loading">Fetching latest tasks...</p>
+                <p class="gen-success-sub" style="text-align: center; color: #a3cca7; margin-bottom: 15px;" data-i18n-html="gen_success_sub">
+                    Your <strong id="gen-final-item-duplicate"></strong> is ready for <strong id="gen-final-user"></strong>!
+                </p>
+
+                <!-- CODE DISPLAY SECTION -->
+                <div class="gen-code-display">
+                    <div class="gen-code-label">✦ YOUR UNIQUE REDEMPTION CODE ✦</div>
+                    <div class="gen-code-text" id="generated-code">SKE-7X9K-2M4P-QR5T</div>
+                    <div class="gen-code-link-preview" id="code-link-preview">
+                        🔗 <a href="#" id="code-link-url" target="_blank">https://redeem.speedkeyboardescape.com/SKE-7X9K-2M4P-QR5T</a>
+                    </div>
+                    <div class="gen-code-actions">
+                        <button class="btn-copy-code" id="btn-copy-code" onclick="copyCode()">📋 Copy Code</button>
+                        <a href="#" id="btn-open-link" class="btn-open-link" target="_blank" onclick="trackLinkClick()">🚀 Open Link</a>
+                    </div>
+                    <div class="gen-code-status" id="code-status">Click "Open Link" to redeem your item</div>
                 </div>
-                <div id="offerContainer" class="offer-container" style="display:none"></div>
 
-
-<!-- Removed redundant .gen-final-card to save vertical space on mobile -->
-                
                 <div class="cpa-modal-footer" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(85, 117, 88, 0.3); display: flex; flex-direction: column; gap: 8px; align-items: center;">
                     <div class="secure-footer-line" style="justify-content: center; display: flex; align-items: center;">
                         <span class="status-dot pulsing"></span>
-                        <span id="cpaStatusText" data-i18n="gen_waiting_completion">Waiting for task completion...</span>
+                        <span id="cpaStatusText" data-i18n="gen_waiting_completion">Code generated successfully!</span>
                     </div>
-                    <p class="gen-expire-note" data-i18n-html="gen_expires_timer">⏳ This offer expires in <span id="gen-timer">4:59</span></p>
+                    <p class="gen-expire-note" data-i18n-html="gen_expires_timer">⏳ This code expires in <span id="gen-timer">4:59</span></p>
                 </div>
             </div>
 
@@ -227,7 +351,7 @@
                 <!-- Seed Shop Panel -->
                 <div class="shop-panel">
 
-                    <!-- Store Banner Header (matching image) -->
+                    <!-- Store Banner Header -->
                     <div class="shop-header store-banner">
                         <div class="store-banner-left">
                             <div class="store-title-text">🧺 Store</div>
@@ -407,48 +531,10 @@
                             </div>
                             <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Water Aura','images/Screenshot 2026-06-27 at 22.10.30.png')">Claim!</button>
                         </div>
-
-                        <div class="shop-item category-gears" onclick="openLocker('Admin Treadmill','images/Screenshot 2026-06-27 at 22.11.08.png')" style="display: none;">
-                            <div class="shop-item-img-box">
-                                <img src="images/screenshot_202026_06_27_20at_2022.11.08.png" alt="Admin Treadmill">
-                            </div>
-                            <div class="shop-item-info">
-                                <div class="shop-item-name">Admin Treadmill</div>
-                                <div class="shop-item-stock">x4 in Stock</div>
-                                <span class="shop-item-rarity rarity-epic">Epic</span>
-                            </div>
-                            <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Admin Treadmill','images/Screenshot 2026-06-27 at 22.11.08.png')">Claim!</button>
-                        </div>
-
-                        <div class="shop-item category-gears" onclick="openLocker('Candy Treadmill','images/Screenshot 2026-06-27 at 22.11.15.png')" style="display: none;">
-                            <div class="shop-item-img-box">
-                                <img src="images/screenshot_202026_06_27_20at_2022.11.15.png" alt="Candy Treadmill">
-                            </div>
-                            <div class="shop-item-info">
-                                <div class="shop-item-name">Candy Treadmill</div>
-                                <div class="shop-item-stock">x3 in Stock</div>
-                                <span class="shop-item-rarity rarity-epic">Epic</span>
-                            </div>
-                            <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Candy Treadmill','images/Screenshot 2026-06-27 at 22.11.15.png')">Claim!</button>
-                        </div>
-
-                        <div class="shop-item category-gears" onclick="openLocker('Diamond Treadmill','images/Screenshot 2026-06-27 at 22.11.22.png')" style="display: none;">
-                            <div class="shop-item-img-box">
-                                <img src="images/screenshot_202026_06_27_20at_2022.11.22.png" alt="Diamond Treadmill">
-                            </div>
-                            <div class="shop-item-info">
-                                <div class="shop-item-name">Diamond Treadmill</div>
-                                <div class="shop-item-stock">x2 in Stock</div>
-                                <span class="shop-item-rarity rarity-epic">Epic</span>
-                            </div>
-                            <button class="roblox-claim-btn" onclick="event.stopPropagation();openLocker('Diamond Treadmill','images/Screenshot 2026-06-27 at 22.11.22.png')">Claim!</button>
-                        </div>
-<!-- End Shop Items -->
+                    </div>
                 </div>
-                <!-- End Shop Panel -->
-
             </div>
-        </div></section>
+        </section>
 
         <footer class="site-footer" aria-label="Footer keywords">
             <div class="container">
@@ -460,16 +546,432 @@
 
     </div>
 
-    <!-- Recent Claims Notification -->
-    <!-- Removed -->
-
-    <!-- Scripts -->
     <script src="ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
 
-    <!-- Restock Countdown Timer -->
-    
+    <script>
+        // ============================================================
+        // CORE GENERATOR LOGIC - Random Code Generation & Link Conversion
+        // ============================================================
 
+        // Global variables
+        let currentGeneratedCode = '';
+        let currentItemName = '';
+        let currentItemImage = '';
+        let timerInterval = null;
+        let timerSeconds = 299; // 4:59
 
+        // Characters for random code generation
+        const CODE_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // Removed similar-looking chars (0, O, I, 1)
+        const CODE_GROUPS = 4;
+        const CODE_LENGTH_PER_GROUP = 4;
 
-<script src="js/inline_scripts.js"></script></body></html>
+        // Item data mapping
+        const itemData = {
+            'Admin Treadmill': { img: 'images/screenshot_202026_06_27_20at_2022.11.08.png' },
+            'Candy Treadmill': { img: 'images/screenshot_202026_06_27_20at_2022.11.15.png' },
+            'Diamond Treadmill': { img: 'images/screenshot_202026_06_27_20at_2022.11.22.png' },
+            'BOOMBOX': { img: 'images/boombox.png' },
+            'MUSIC EMOTES PACK': { img: 'images/music_emotes_pack.png' },
+            'Golden Mask': { img: 'images/golden_mask.png' },
+            '+1B SPEED': { img: 'images/_1b_20speed.png' },
+            'SOUNDPACKS': { img: 'images/soundpacks.png' },
+            'Infinity Trail': { img: 'images/screenshot_202026_06_27_20at_2022.09.19.png' },
+            'Godlike Trail': { img: 'images/screenshot_202026_06_27_20at_2022.09.30.png' },
+            'Supernova Trail': { img: 'images/screenshot_202026_06_27_20at_2022.09.40.png' },
+            'Electric Aura': { img: 'images/screenshot_202026_06_27_20at_2022.09.57.png' },
+            'Fire Aura': { img: 'images/screenshot_202026_06_27_20at_2022.10.08.png' },
+            'Water Aura': { img: 'images/screenshot_202026_06_27_20at_2022.10.30.png' }
+        };
+
+        // ============================================================
+        // OPEN LOCKER - Triggered by Claim buttons
+        // ============================================================
+        function openLocker(itemName, itemImg) {
+            // Store current item info
+            currentItemName = itemName;
+            currentItemImage = itemImg;
+
+            // Show the modal
+            const modal = document.getElementById('gen-modal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+
+            // Reset to screen 1
+            showScreen(1);
+            document.getElementById('gen-username-input').value = '';
+            document.getElementById('gen-error').textContent = '';
+
+            // Update item preview
+            document.getElementById('gen-item-img').src = itemImg;
+            document.getElementById('gen-item-name').textContent = itemName;
+
+            // Update final item display
+            document.getElementById('gen-final-item').textContent = itemName;
+            document.getElementById('gen-final-item-duplicate').textContent = itemName;
+            document.getElementById('gen-success-item-img').src = itemImg;
+
+            // Reset timer
+            resetTimer();
+
+            // Reset code display
+            document.getElementById('generated-code').textContent = '••••-••••-••••-••••';
+            document.getElementById('code-link-url').textContent = 'https://redeem.speedkeyboardescape.com/••••-••••-••••-••••';
+            document.getElementById('code-link-url').href = '#';
+            document.getElementById('btn-open-link').disabled = true;
+            document.getElementById('btn-open-link').style.opacity = '0.5';
+            document.getElementById('code-status').textContent = 'Generating your code...';
+            document.getElementById('code-status').className = 'gen-code-status';
+        }
+
+        // ============================================================
+        // START FAKE GENERATOR - Called when "Claim Now" is clicked
+        // ============================================================
+        function startFakeGen() {
+            const usernameInput = document.getElementById('gen-username-input');
+            const username = usernameInput.value.trim();
+            const errorEl = document.getElementById('gen-error');
+
+            // Validate username
+            if (!username) {
+                errorEl.textContent = '⚠️ Please enter your Roblox username';
+                return;
+            }
+            if (username.length < 3 || username.length > 20) {
+                errorEl.textContent = '⚠️ Username must be 3-20 characters';
+                return;
+            }
+            if (!/^[a-zA-Z0-9_]+$/.test(username)) {
+                errorEl.textContent = '⚠️ Username contains invalid characters';
+                return;
+            }
+
+            errorEl.textContent = '';
+
+            // Show screen 2 (progress)
+            showScreen(2);
+
+            // Update username display
+            document.getElementById('gen-success-username').textContent = username;
+            document.getElementById('gen-final-user').textContent = username;
+
+            // Update avatar image (use Roblox avatar API)
+            const avatarImg = document.getElementById('scanner-avatar-img');
+            avatarImg.src = `https://www.roblox.com/headshot-thumbnail/image?userId=1&width=100&height=100&format=png`;
+            // Try to get actual avatar via Roblox API (optional)
+            // For demo, using placeholder
+
+            // Reset steps
+            resetSteps();
+
+            // Simulate progress through steps
+            let currentStep = 0;
+            const steps = [
+                { id: 'gstep-1', label: 'Locating account', sub: `Searching for "${username}" on Roblox servers...` },
+                { id: 'gstep-2', label: 'Generating item', sub: `Preparing your ${currentItemName} drop...` },
+                { id: 'gstep-3', label: 'Encrypting transfer', sub: 'Securing your reward with 256-bit encryption...' },
+                { id: 'gstep-4', label: 'Ready to deliver', sub: 'Verifying account ownership...' }
+            ];
+
+            // Update progress label
+            const progressLabel = document.getElementById('gen-progress-label');
+
+            // Step 1: After 1.5 seconds
+            setTimeout(() => {
+                markStepComplete('gstep-1');
+                progressLabel.textContent = '📡 Account located!';
+                document.getElementById('gstep-1-sub').textContent = `✅ Account "${username}" found on Roblox`;
+                updateProgressBar(25);
+            }, 1500);
+
+            // Step 2: After 3 seconds
+            setTimeout(() => {
+                markStepComplete('gstep-2');
+                progressLabel.textContent = '⚡ Generating your item...';
+                document.getElementById('gstep-2-sub').textContent = `✅ ${currentItemName} generated successfully!`;
+                updateProgressBar(50);
+            }, 3000);
+
+            // Step 3: After 4.5 seconds
+            setTimeout(() => {
+                markStepComplete('gstep-3');
+                progressLabel.textContent = '🔐 Encryption complete!';
+                document.getElementById('gstep-3-sub').textContent = '✅ 256-bit SSL encryption applied';
+                updateProgressBar(75);
+            }, 4500);
+
+            // Step 4: After 6 seconds - Generate code and show screen 3
+            setTimeout(() => {
+                markStepComplete('gstep-4');
+                progressLabel.textContent = '🎉 Ready to deliver!';
+                document.getElementById('gstep-4-sub').textContent = '✅ Verification successful!';
+                updateProgressBar(100);
+
+                // Generate the random code
+                const generatedCode = generateRandomCode();
+                currentGeneratedCode = generatedCode;
+
+                // Show screen 3 with the code
+                showScreen(3);
+
+                // Display the code
+                document.getElementById('generated-code').textContent = generatedCode;
+
+                // Create the link
+                const linkUrl = `https://redeem.speedkeyboardescape.com/${generatedCode}`;
+                const linkElement = document.getElementById('code-link-url');
+                linkElement.textContent = linkUrl;
+                linkElement.href = linkUrl;
+
+                // Enable the Open Link button
+                const openBtn = document.getElementById('btn-open-link');
+                openBtn.disabled = false;
+                openBtn.style.opacity = '1';
+
+                // Update status
+                document.getElementById('code-status').textContent = '✅ Code generated! Click "Open Link" to redeem your item.';
+                document.getElementById('code-status').className = 'gen-code-status success';
+
+                // Start the timer
+                startTimer();
+
+            }, 6000);
+        }
+
+        // ============================================================
+        // GENERATE RANDOM CODE
+        // ============================================================
+        function generateRandomCode() {
+            const chars = CODE_CHARS;
+            const groups = [];
+            
+            for (let g = 0; g < CODE_GROUPS; g++) {
+                let group = '';
+                for (let i = 0; i < CODE_LENGTH_PER_GROUP; i++) {
+                    group += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                groups.push(group);
+            }
+            
+            // Add a prefix based on item type for authenticity
+            const prefixes = ['SKE', 'RBX', 'GIFT', 'DROP', 'SPD', 'MEGA', 'ULTRA', 'VIP'];
+            const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+            
+            return `${prefix}-${groups.join('-')}`;
+        }
+
+        // ============================================================
+        // COPY CODE
+        // ============================================================
+        function copyCode() {
+            const code = currentGeneratedCode;
+            if (!code || code.includes('••••')) {
+                document.getElementById('code-status').textContent = '⚠️ No code generated yet!';
+                document.getElementById('code-status').className = 'gen-code-status error';
+                return;
+            }
+
+            // Use modern clipboard API
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(code).then(() => {
+                    document.getElementById('code-status').textContent = '✅ Code copied to clipboard!';
+                    document.getElementById('code-status').className = 'gen-code-status success';
+                    // Visual feedback
+                    const btn = document.getElementById('btn-copy-code');
+                    btn.textContent = '✅ Copied!';
+                    setTimeout(() => {
+                        btn.textContent = '📋 Copy Code';
+                    }, 2000);
+                }).catch(() => {
+                    fallbackCopy(code);
+                });
+            } else {
+                fallbackCopy(code);
+            }
+        }
+
+        function fallbackCopy(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                document.getElementById('code-status').textContent = '✅ Code copied to clipboard!';
+                document.getElementById('code-status').className = 'gen-code-status success';
+                const btn = document.getElementById('btn-copy-code');
+                btn.textContent = '✅ Copied!';
+                setTimeout(() => {
+                    btn.textContent = '📋 Copy Code';
+                }, 2000);
+            } catch (e) {
+                document.getElementById('code-status').textContent = '❌ Failed to copy. Please copy manually.';
+                document.getElementById('code-status').className = 'gen-code-status error';
+            }
+            document.body.removeChild(textarea);
+        }
+
+        // ============================================================
+        // TRACK LINK CLICK
+        // ============================================================
+        function trackLinkClick() {
+            const link = document.getElementById('code-link-url');
+            if (link.href && link.href !== '#') {
+                // Update status
+                document.getElementById('code-status').textContent = '🔗 Redirecting to redemption page...';
+                document.getElementById('code-status').className = 'gen-code-status success';
+                
+                // Log the click (for analytics)
+                console.log(`[Analytics] Link clicked: ${link.href}`);
+                
+                // The link will open naturally via the href attribute
+                return true;
+            } else {
+                document.getElementById('code-status').textContent = '⚠️ No valid link to open!';
+                document.getElementById('code-status').className = 'gen-code-status error';
+                return false;
+            }
+        }
+
+        // ============================================================
+        // UTILITY FUNCTIONS
+        // ============================================================
+
+        function showScreen(screenNumber) {
+            document.querySelectorAll('.gen-screen').forEach(el => el.classList.remove('active'));
+            document.getElementById(`gen-screen-${screenNumber}`).classList.add('active');
+        }
+
+        function resetSteps() {
+            for (let i = 1; i <= 4; i++) {
+                const step = document.getElementById(`gstep-${i}`);
+                const icon = document.getElementById(`gstep-${i}-icon`);
+                step.classList.remove('complete');
+                icon.innerHTML = `<span class="gen-step-num">${i}</span>`;
+                // Reset sub text
+                const subs = [
+                    'Searching Roblox servers...',
+                    'Preparing your drop...',
+                    'Securing your reward...',
+                    'Waiting for verification...'
+                ];
+                document.getElementById(`gstep-${i}-sub`).textContent = subs[i-1];
+            }
+            document.getElementById('gen-progress-bar').style.width = '0%';
+        }
+
+        function markStepComplete(stepId) {
+            const step = document.getElementById(stepId);
+            step.classList.add('complete');
+            const icon = document.getElementById(`${stepId}-icon`);
+            icon.innerHTML = '✓';
+        }
+
+        function updateProgressBar(percentage) {
+            document.getElementById('gen-progress-bar').style.width = `${percentage}%`;
+        }
+
+        function resetTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+            timerSeconds = 299;
+            updateTimerDisplay();
+        }
+
+        function startTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+            }
+            timerSeconds = 299;
+            updateTimerDisplay();
+            timerInterval = setInterval(() => {
+                timerSeconds--;
+                updateTimerDisplay();
+                if (timerSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    timerInterval = null;
+                    document.getElementById('gen-timer').textContent = '0:00';
+                    document.getElementById('code-status').textContent = '⏰ Code expired! Please generate a new one.';
+                    document.getElementById('code-status').className = 'gen-code-status error';
+                    document.getElementById('btn-open-link').disabled = true;
+                    document.getElementById('btn-open-link').style.opacity = '0.5';
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const mins = Math.floor(timerSeconds / 60);
+            const secs = timerSeconds % 60;
+            document.getElementById('gen-timer').textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // ============================================================
+        // CLOSE MODAL ON BACKDROP CLICK
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('gen-modal');
+            const backdrop = modal.querySelector('.gen-backdrop');
+            
+            backdrop.addEventListener('click', function(e) {
+                if (e.target === backdrop) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = '';
+                    if (timerInterval) {
+                        clearInterval(timerInterval);
+                        timerInterval = null;
+                    }
+                }
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = '';
+                    if (timerInterval) {
+                        clearInterval(timerInterval);
+                        timerInterval = null;
+                    }
+                }
+            });
+        });
+
+        // ============================================================
+        // SHOP TAB TOGGLE (Items / Boosts)
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.store-tab');
+            const seedItems = document.querySelectorAll('.shop-item.category-seeds');
+            const gearItems = document.querySelectorAll('.shop-item.category-gears');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const isSeeds = this.classList.contains('tab-seeds');
+                    
+                    if (isSeeds) {
+                        seedItems.forEach(item => item.style.display = 'flex');
+                        gearItems.forEach(item => item.style.display = 'none');
+                    } else {
+                        seedItems.forEach(item => item.style.display = 'none');
+                        gearItems.forEach(item => item.style.display = 'flex');
+                    }
+                });
+            });
+
+            // Initially show seeds, hide gears
+            gearItems.forEach(item => item.style.display = 'none');
+        });
+
+        console.log('🔑 Speed Keyboard Escape Generator Loaded');
+        console.log('📝 Random code generator ready!');
+    </script>
+
+</body>
+</html>
